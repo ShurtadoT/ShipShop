@@ -1,0 +1,277 @@
+/* Archivo: styles.css */
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Barra de navegación */
+nav {
+    background-color: #1c1c1c;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav li {
+    position: relative;
+}
+
+nav a {
+    color: #ffffff;
+    padding: 10px;
+    display: block;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    text-decoration: none; /* Eliminar subrayado */
+}
+
+nav a:hover,
+nav a:focus {
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none; /* Asegurarse de eliminar el subrayado en hover y focus */
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #333333;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav ul ul li {
+    width: 180px;
+}
+
+nav ul ul a {
+    padding: 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    text-decoration: none; /* Eliminar subrayado */
+}
+
+nav ul ul a:hover,
+nav ul ul a:focus {
+    background-color: #555555;
+    color: #ffffff;
+    text-decoration: none; /* Asegurarse de eliminar el subrayado en hover y focus */
+}
+
+nav li:hover > ul {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* Encabezado */
+header {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+header h2 {
+    font-size: 1.5em;
+    margin: 10px 0 0 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+header::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: #ffffff;
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 30px 10px;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header h2 {
+        font-size: 1.2em;
+    }
+}
+
+
+/* Sección de productos */
+#productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+#productos article {
+    background-color: #1c1c1c;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    flex: 1 1 calc(33.333% - 40px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#productos img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#productos button {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#productos button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Sección de información de productos */
+#informacion article {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #1c1c1c;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#informacion img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 20px;
+    flex: 1;
+}
+
+#informacion div {
+    flex: 2;
+}
+
+/* Sección de comentarios */
+#comentarios {
+    padding: 20px;
+    background-color: #1c1c1c;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#form-comentario label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#form-comentario input, #form-comentario textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#form-comentario button {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#form-comentario button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Sección Acerca de Nosotros */
+#acerca-de {
+    padding: 20px;
+    background-color: #1c1c1c;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#acerca-de h3 {
+    margin-top: 0;
+}
+
+/* Pie de página */
+footer {
+    background-color: #1c1c1c;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #333333;
+}
+
+footer a {
+    color: #ffffff;
+    margin: 0 10px;
+}
+
+footer a img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
