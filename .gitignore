@@ -1,0 +1,33 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración del entorno
+.env
+
+# Dependencias
+node_modules/
+vendor/
+
+# Archivos de construcción
+dist/
+build/
+
+# Archivos binarios
+*.exe
+*.dll
+*.so
+
+# Archivos temporales de desarrollo
+*.log
+*.tmp
+
+# Archivos específicos del editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Otros archivos innecesarios
+*.bak
+*.swp
