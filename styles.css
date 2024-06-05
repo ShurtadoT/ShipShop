@@ -24,6 +24,8 @@ nav {
     background-color: #1c1c1c;
     padding: 10px 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1000;
 }
 
 nav ul {
@@ -63,6 +65,7 @@ nav ul ul {
     padding: 0;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1100;
 }
 
 nav ul ul li {
@@ -92,7 +95,6 @@ nav li:hover > ul {
     to { opacity: 1; }
 }
 
-
 /* Encabezado */
 header {
     background-color: #000000;
@@ -101,6 +103,7 @@ header {
     padding: 50px 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
+    z-index: 900;
 }
 
 header h1 {
@@ -142,92 +145,149 @@ header::after {
     }
 }
 
-
 /* Sección de productos */
 #productos {
+    padding: 50px 20px;
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
     justify-content: space-around;
-    padding: 20px;
-}
-
-#productos article {
     background-color: #1c1c1c;
-    border: 1px solid #333333;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 20px;
-    flex: 1 1 calc(33.333% - 40px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
 }
 
-#productos img {
+#productos h2 {
+    width: 100%;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+article {
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px; /* Agregado para mejorar la apariencia */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agregado para mejorar la apariencia */
+}
+
+article img {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
 }
 
-#productos button {
+article h3 {
+    color: #ffffff;
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+article button {
     background-color: #ffffff;
     color: #000000;
     border: none;
     padding: 10px 20px;
-    margin-top: 10px;
+    font-size: 1em;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#productos button:hover {
-    background-color: #f0f0f0;
+article button:hover,
+article button:focus {
+    background-color: #000000;
+    color: #ffffff;
 }
 
-/* Sección de información de productos */
+/* Sección de información */
+#informacion {
+    padding: 50px 20px;
+    background-color: #1c1c1c;
+}
+
 #informacion article {
     display: flex;
     flex-wrap: wrap;
-    background-color: #1c1c1c;
-    border: 1px solid #333333;
-    border-radius: 10px;
-    margin: 20px;
+    gap: 20px;
+    margin-bottom: 50px;
+    background-color: #333333;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agregado para mejorar la apariencia */
 }
 
 #informacion img {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
-    margin-right: 20px;
-    flex: 1;
 }
 
 #informacion div {
-    flex: 2;
+    flex: 1;
+    min-width: 300px;
+}
+
+#informacion h3 {
+    color: #ffffff;
+    font-size: 2em;
+    margin-top: 0;
+}
+
+#informacion p,
+#informacion ul {
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+#informacion h4 {
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#informacion ul {
+    padding-left: 20px;
+}
+
+#informacion ul li {
+    margin-bottom: 5px;
 }
 
 /* Sección de comentarios */
 #comentarios {
-    padding: 20px;
+    padding: 50px 20px;
     background-color: #1c1c1c;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#comentarios h2 {
+    color: #ffffff;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#form-comentario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 #form-comentario label {
-    display: block;
-    margin: 10px 0 5px;
+    color: #ffffff;
+    font-size: 1em;
 }
 
-#form-comentario input, #form-comentario textarea {
-    width: 100%;
+#form-comentario input,
+#form-comentario textarea {
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #333333;
+    border: none;
     border-radius: 5px;
-    background-color: #000000;
-    color: #ffffff;
+    font-size: 1em;
 }
 
 #form-comentario button {
@@ -235,43 +295,77 @@ header::after {
     color: #000000;
     border: none;
     padding: 10px 20px;
+    font-size: 1em;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#form-comentario button:hover {
-    background-color: #f0f0f0;
+#form-comentario button:hover,
+#form-comentario button:focus {
+    background-color: #000000;
+    color: #ffffff;
 }
 
 /* Sección Acerca de Nosotros */
 #acerca-de {
-    padding: 20px;
+    padding: 50px 20px;
     background-color: #1c1c1c;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+}
+
+#acerca-de h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#acerca-de p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 #acerca-de h3 {
-    margin-top: 0;
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 /* Pie de página */
 footer {
-    background-color: #1c1c1c;
+    background-color: #000000;
     color: #ffffff;
     text-align: center;
     padding: 20px;
-    border-top: 1px solid #333333;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Sombra superior */
 }
 
-footer a {
-    color: #ffffff;
-    margin: 0 10px;
+footer p {
+    margin: 10px 0;
+    font-size: 1em;
 }
 
-footer a img {
+footer img {
     width: 24px;
     height: 24px;
+    margin: 0 10px;
     vertical-align: middle;
+}
+
+@media (max-width: 600px) {
+    #productos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #informacion article {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer p {
+        font-size: 0.9em;
+    }
 }
