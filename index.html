@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@300&display=swap"
+        rel="stylesheet">
     <meta charset="UTF-8">
-    <meta name="description" content="ShipShop, tu Pasaje a las Estrellas - Modelos de Naves Espaciales de SpaceX y NASA">
-    <meta name="keywords" content="SpaceX, NASA Falcon 1, Falcon 9, Starship, Saturno V, SLS, DeltaIVHeavy, modelos de cohetes">
+    <meta name="description"
+        content="ShipShop, tu Pasaje a las Estrellas - Modelos de Naves Espaciales de SpaceX y NASA">
+    <meta name="keywords"
+        content="SpaceX, NASA Falcon Heavy, Falcon 9, Starship, Saturno V, SLS, DeltaIVHeavy, modelos de cohetes">
     <meta name="author" content="Samuel Hurtado">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpaceX in your pocket</title>
+    <title>ShipShop</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body id="home">
     <!-- Barra de navegación -->
     <nav>
@@ -17,13 +22,13 @@
             <li><a href="#home">Inicio</a></li>
             <li><a href="#productos">Productos</a>
                 <ul class="submenu1">
-                    <li><a href="#naves-nasa">Naves de NASA</a></li>
-                    <li><a href="#naves-spacex">Naves de SpaceX</a></li>
+                    <li><a href="#ProductosSpaceX">Naves de SpaceX</a></li>
+                    <li><a href="#ProductosNASA">Naves de NASA</a></li>
                 </ul>
             </li>
             <li><a href="#informacion">Información</a>
                 <ul class="submenu2">
-                    <li><a href="#info-Falcon1">Falcon 1</a></li>
+                    <li><a href="#info-FalconHeavy">Falcon Heavy</a></li>
                     <li><a href="#info-Falcon9">Falcon 9</a></li>
                     <li><a href="#info-Starship">Starship</a></li>
                     <li><a href="#info-SaturnoV">Saturno V</a></li>
@@ -42,171 +47,295 @@
         <h2>“Viaja Más Allá con Nuestros Modelos de Naves Espaciales”</h2>
     </header>
 
+
     <!-- Productos -->
-    <section id="productos">
-        <h2>Naves de SpaceX</h2>
-        <article id="Falcon1">
-            <img src="images/Falcon1.jpg" alt="Falcon 1">
-            <h3>Falcon 1</h3>
-            <button aria-label="Comprar Falcon 1 ahora">Comprar ahora</button>
-        </article>
-        <article id="Falcon9">
-            <img src="images/Falcon9.jpg" alt="Falcon 9">
-            <h3>Falcon 9</h3>
-            <button aria-label="Comprar Falcon 9 ahora">Comprar ahora</button>
-        </article>
-        <article id="Starship">
-            <img src="images/Starship.jpg" alt="Starship">
-            <h3>Starship</h3>
-            <button aria-label="Comprar Starship ahora">Comprar ahora</button>
+    <h2>Space X</h2>
+    <section id="ProductosSpaceX" class="productos">
+        
+        <article id="FalconHeavy" class="card1">
+            <h3>Falcon Heavy</h3>
+            <img src="images/FalconHeavy1.jpg" alt="Imagen del Falcon 1" style="width:100%;height:auto;">
+            <button class="buy-now">Shop Now</button>
         </article>
 
-        <h2>Naves de NASA</h2>
-        <article id="SaturnoV">
-            <img src="images/SaturnoV1.jpg" alt="Saturno V">
+        <article id="Falcon9" class="card1">
+            <h3>Falcon 9</h3>
+            <img src="images/Falcon9.jpg" alt="Imagen del Falcon 9" style="width:100%;height:auto;">
+            <button class="buy-now">Shop Now</button>
+        </article>
+
+        <article id="Starship" class="card1">
+            <h3>Starship</h3>
+            <img src="images/Starship.jpg" alt="Imagen del Starship" style="width:100%;height:auto;">
+            <button class="buy-now">Shop Now</button>
+        </article>
+    </section>
+
+    <h2>NASA</h2>
+    <section id="ProductosNASA" class="productos">
+        <article id="SaturnoV" class="card1">
             <h3>Saturno V</h3>
-            <button aria-label="Comprar Saturno V ahora">Comprar ahora</button>
+            <img src="images/SaturnoV1.jpg" alt="Imagen del Saturno V" style="width:100%;height:auto;">
+            <button class="buy-now">Shop Now</button>
         </article>
-        <article id="SLS">
-            <img src="images/SLS1.jpg" alt="SLS">
+
+        <article id="SLS" class="card1">
             <h3>SLS</h3>
-            <button aria-label="Comprar SLS ahora">Comprar ahora</button>
+            <img src="images/SLS1.jpg" alt="Imagen del SLS" style="width:100%;height:auto;">
+            <button class="buy-now">Shop Now</button>
         </article>
-        <article id="DeltaIVHeavy">
-            <img src="images/DeltaIVHeavy1.jpg" alt="Delta IV Heavy">
+
+        <article id="DeltaIVHeavy" class="card1">
             <h3>Delta IV Heavy</h3>
-            <button aria-label="Comprar Delta IV Heavy ahora">Comprar ahora</button>
+            <img src="images/DeltaIVHeavy1.jpg" alt="Imagen del Delta IV Heavy" style="width:100%;height:auto;">
+            <button class="buy-now">Shop Now</button>
         </article>
     </section>
 
     <!-- Información de los productos -->
     <section id="informacion">
-        <article id="info-Falcon1">
-            <img src="images/Falcon1.1.jpg" alt="Falcon 1">
-            <div>
-                <h3>Falcon 1</h3>
-                <p>El Falcon 1 fue el primer cohete desarrollado por SpaceX. Realizó su primer vuelo en 2006 y fue el primer cohete de combustible líquido financiado y desarrollado de forma privada que alcanzó la órbita en 2008.</p>
-                <h4>Especificaciones Técnicas:</h4>
-                <ul>
-                    <li>Altura: 21.3 metros</li>
-                    <li>Diámetro: 1.7 metros</li>
-                    <li>Capacidad de Carga: 670 kg a órbita terrestre baja (LEO)</li>
-                    <li>Número de Motores: 1</li>
-                </ul>
-                <h4>Historial de Misiones:</h4>
-                <ul>
-                    <li>Primer lanzamiento exitoso: 28 de septiembre de 2008</li>
-                    <li>Último lanzamiento: 14 de julio de 2009</li>
-                </ul>
-            </div>
-        </article>
-
-        <article id="info-Falcon9">
-            <img src="images/Falcon9.1.jpg" alt="Falcon 9">
-            <div>
-                <h3>Falcon 9</h3>
-                <p>El Falcon 9 es un cohete reutilizable que ha sido la columna vertebral de las misiones de SpaceX. Su primer vuelo fue en 2010.</p>
-                <h4>Especificaciones Técnicas:</h4>
-                <ul>
-                    <li>Altura: 70 metros</li>
-                    <li>Diámetro: 3.7 metros</li>
-                    <li>Capacidad de Carga:
-                        <ul>
-                            <li>22,800 kg a órbita terrestre baja (LEO)</li>
-                            <li>8,300 kg a órbita de transferencia geoestacionaria (GTO)</li>
+        <div class="container">
+            <article id="info-FalconHeavy">
+                <div class="card">
+                    <img src="images/FalconHeavy.jpg" alt="Falcon Heavy">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z">
+                        </path>
+                    </svg>
+                    <div class="card__content">
+                        <p class="card__title">Falcon Heavy</p>
+                        <p class="card__description">El Falcon Heavy (FH) («Halcón Pesado»), anteriormente conocido como
+                            Falcon 9 Heavy, es un vehículo de lanzamiento espacial superpesado reutilizable, diseñado y
+                            fabricado por SpaceX. El Falcon Heavy es una variante del lanzador Falcon 9 y consiste en un
+                            núcleo de cohete Falcon 9 reforzado, con otros dos núcleos de Falcon 9 como cohetes
+                            aceleradores adicionales. Esto aumentará la carga útil de la órbita terrestre baja (OTB) a
+                            64 toneladas, comparado con 22,8 toneladas de un Falcon 9. Falcon Heavy fue diseñado desde
+                            el principio para llevar a los seres humanos al espacio, y permitiría misiones con
+                            tripulación a la Luna o Marte.
+                        </p>
+                        <p class="card__description">Características:</p>
+                        <ul class="card__description ">
+                            <li>Funcionalidad: Vuelo espacial orbital. Vehículo de lanzamiento de elevación superpesada
+                            </li>
+                            <li>Altura: 70 m</li>
+                            <li>Diámetro: 3,66 m x2 booster </li>
+                            <li>N° Propulsores: 2</li>
+                            <li>Motores: 9 Merlin 1D</li>
+                            <li>Cantidad de motores: 27</li>
+                            <li>Velocidad máxima: 39.600 km/h</li>
+                            <li>Presupuesto: 90 millones USD (2018)</li>
                         </ul>
-                    </li>
-                    <li>Número de Motores: 9 en la primera etapa, 1 en la segunda etapa</li>
-                </ul>
-                <h4>Historial de Misiones:</h4>
-                <ul>
-                    <li>Primer lanzamiento exitoso: 4 de junio de 2010</li>
-                    <li>Misiones notables: Lanzamiento del Dragon a la Estación Espacial Internacional, lanzamiento del satélite SES-10 en el primer vuelo de un propulsor reciclado</li>
-                </ul>
-            </div>
-        </article>
+                    </div>
+                </div>
+            </article>
+        </div>
 
-        <article id="info-Starship">
-            <img src="images/Starship1.jpg" alt="Starship">
-            <div>
-                <h3>Starship</h3>
-                <p>Starship es un sistema de lanzamiento totalmente reutilizable que está en desarrollo y prueba. Consta de dos partes:</p>
-                <p>- Super Heavy: El cohete de primera etapa, encargado de proporcionar el impulso inicial para salir de la atmósfera terrestre.</p>
-                <p>- Starship: La segunda etapa y la nave espacial en sí, diseñada para transportar carga y pasajeros a destinos como la Luna, Marte y más allá.</p>
-                <h4>Especificaciones Técnicas:</h4>
-                <ul>
-                    <li>Altura (con Super Heavy): 122 metros</li>
-                    <li>Diámetro: 9 metros</li>
-                    <li>Capacidad de Carga: Hasta 100 toneladas métricas a órbita terrestre baja (LEO)</li>
-                    <li>Número de Motores (propuestos): 37 en la primera etapa (Super Heavy), 6 en la segunda etapa (Starship)</li>
-                </ul>
-                <h4>Estado Actual:</h4>
-                <p>En desarrollo y pruebas, con varios prototipos construidos y pruebas de vuelo realizadas.</p>
-            </div>
-        </article>
-
-        <article id="info-SaturnoV">
-            <img src="images/SaturnoV.jpg" alt="Saturno V">
-            <div>
-                <h3>Saturno V</h3>
-                <p>El Saturno V fue un cohete de la NASA diseñado para las misiones del programa Apolo, incluyendo los aterrizajes lunares. Fue el cohete más grande y poderoso jamás construido y volado con éxito.</p>
-                <h4>Especificaciones Técnicas:</h4>
-                <ul>
-                    <li>Altura: 111 metros</li>
-                    <li>Diámetro: 10.1 metros</li>
-                    <li>Capacidad de Carga: 141,136 kg a órbita terrestre baja (LEO)</li>
-                    <li>Número de Motores: 5 motores F-1 en la primera etapa, 5 motores J-2 en la segunda etapa, 1 motor J-2 en la tercera etapa</li>
-                </ul>
-                <h4>Historial de Misiones:</h4>
-                <ul>
-                    <li>Primer lanzamiento exitoso: 9 de noviembre de 1967</li>
-                    <li>Último lanzamiento: 14 de mayo de 1973</li>
-                    <li>Misiones notables: Apolo 11 - Primer aterrizaje lunar tripulado</li>
-                </ul>
-            </div>
-        </article>
-
-        <article id="info-SLS">
-            <img src="images/SLS.jpg" alt="SLS">
-            <div>
-                <h3>Sistema de Lanzamiento Espacial (SLS)</h3>
-                <p>El Sistema de Lanzamiento Espacial (SLS) es un cohete de carga pesada en desarrollo por la NASA. Está diseñado para misiones más allá de la órbita terrestre baja, incluyendo misiones a la Luna y Marte.</p>
-                <h4>Especificaciones Técnicas:</h4>
-                <ul>
-                    <li>Altura: 98 metros (Block 1)</li>
-                    <li>Diámetro: 8.4 metros</li>
-                    <li>Capacidad de Carga:
-                        <ul>
-                            <li>95,000 kg a órbita terrestre baja (LEO) (Block 1)</li>
-                            <li>130,000 kg a órbita terrestre baja (LEO) (Block 2)</li>
+        <div class="container">
+            <article id="info-Falcon9">
+                <div class="card">
+                    <img src="images/Falcon9.1.jpg" alt="Falcon 9">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z">
+                        </path>
+                    </svg>
+                    <div class="card__content">
+                        <p class="card__title">Falcon 9</p>
+                        <p class="card__description">El Falcon 9 (español: "halcón", a nueve motores) es un vehículo de
+                            lanzamiento parcialmente reutilizable de dos etapas diseñado y fabricado por SpaceX. Usa
+                            como propelentes queroseno para cohetes (RP-1) densificado y oxígeno líquido (LOX). Su
+                            versión actual, el Falcon 9 Block 5, tiene una carga útil aproximada de 22.800 kg a órbita
+                            baja terrestre y de aproximadamente 8.300 kg a órbita de transferencia geosíncrona. La
+                            primera etapa es capaz de aterrizar para ser reutilizada en nuevas misiones, ya sea
+                            volviendo a tierra o sobre una nave dron.
+                            Mediante este cohete, SpaceX ofrece servicios como lanzamiento de satélites, y transporte de
+                            carga a la Estación Espacial Internacional (ISS). En el año 2020 transportó por primera vez
+                            astronautas a la ISS junto con su nueva nave Crew Dragon, y en el año mismo empezó el
+                            servicio regular.</p>
+                        <p class="card__description">Características:</p>
+                        <ul class="card__description ">
+                            <li>Funcionalidad: Sistema de lanzamiento orbital reutilizable
+                            </li>
+                            <li>Altura: 70 m</li>
+                            <li>Coste por lanzamiento:
+                                Desechable: $62M
+                                Reutilizable: $56M (planeado $43M) (2024)</li>
+                            <li>Carga útil a OTB. Desechable: 22.800 kg</li>
+                            <li>Carga útil a OTG.
+                                Desechable: 8.300 kg
+                                Reutilizable: 5.500 kg</li>
+                            <li>Motores primera etapa: 9 Merlin 1D+</li>
+                            <li>Motores segunda etapa: 1 Merlin 1D+ Vacuum</li>
+                            <li>Último vuelo: 23 de abril del 2024</li>
                         </ul>
-                    </li>
-                    <li>Número de Motores: 4 RS-25 en la etapa central, 2 propulsores de cohetes sólidos (SRBs)</li>
-                </ul>
-                <h4>Estado Actual:</h4>
-                <p>En desarrollo, con el primer vuelo planificado para 2021 en la misión Artemis I.</p>
-            </div>
-        </article>
+                    </div>
+                </div>
+            </article>
+        </div>
 
-        <article id="info-DeltaIVHeavy">
-            <img src="images/DeltaIVHeavy.jpg" alt="Delta IV Heavy">
-            <div>
-                <h3>Delta IV Heavy</h3>
-                <p>El Delta IV Heavy es un cohete de carga pesada diseñado y operado por United Launch Alliance (ULA). Es uno de los cohetes más poderosos en servicio actualmente.</p>
-                <h4>Especificaciones Técnicas:</h4>
-                <ul>
-                    <li>Altura: 72 metros</li>
-                    <li>Diámetro: 5 metros (cada núcleo)</li>
-                    <li>Capacidad de Carga: 28,790 kg a órbita terrestre baja (LEO)</li>
-                    <li>Número de Motores: 3 motores RS-68A en los tres núcleos del primer estadio, 1 motor RL10B-2 en el segundo estadio</li>
-                </ul>
-                <h4>Historial de Misiones:</h4>
-                <ul>
-                    <li>Primer lanzamiento exitoso: 21 de diciembre de 2004</li>
-                    <li>Misiones notables: Envío de cargas clasificadas para el Departamento de Defensa de EE.UU., misión Parker Solar Probe</li>
-                </ul>
-            </div>
-        </article>
+        <div class="container">
+            <article id="info-Starship">
+                <div class="card">
+                    <img src="images/Starship1.jpg" alt="Starship">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z">
+                        </path>
+                    </svg>
+                    <div class="card__content">
+                        <p class="card__title">Starship</p>
+                        <p class="card__description">Starship (español: Astronave), también llamada Starship/Super
+                            Heavy, es un sistema de lanzamiento y nave espacial totalmente reutilizable desarrollado por
+                            SpaceX como proyecto de vuelo espacial privado. Fue diseñado para permitir el transporte de
+                            carga y pasajeros hacia la órbita terrestre, la Luna, Marte y más allá. La nave (nombrada
+                            como Starship) se usará en lanzamientos orbitales en conjunto con una primera etapa, el
+                            propulsor Super Heavy, por lo que servirá como un vehículo de lanzamiento de dos etapas a
+                            órbita. A la combinación de nave espacial (2ª etapa) y propulsor (1ª etapa) también se le
+                            llama Starship.
+                            La gran carga útil esperada de hasta 150.000 kg lo convertiría en un vehículo de lanzamiento
+                            superpesado. Starship es actualmente el cohete más poderoso en la historia, y el primer
+                            cohete orbital 100% reutilizable.
+                        </p>
+                        <p class="card__description">Características:</p>
+                        <ul class="card__description ">
+                            <li>Funcionalidad: Colonización de Marte, Transporte terrestre-lunar, Transporte
+                                multiplanetario, Transporte intercontinental, Sistema de lanzamiento reutilizable, Nave
+                                espacial reutilizable, Turismo espacial
+                            </li>
+                            <li>Altura: 121 m</li>
+                            <li>Coste por lanzamiento: US$ 2M (Estimado) (2024)</li>
+                            <li>Capacidades: 100.000 - 150.000 kg a LEO</li>
+                            <li>Vuelo inaugural: 20 de abril del 2023</li>
+                            <li>Masa: (5.000.000 kg) (con carga útil máxima)</li>
+                            <li>Último vuelo: 6 de junio del 2024</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="container">
+            <article id="info-SaturnoV">
+                <div class="card">
+                    <img src="images/SaturnoV.jpg" alt="Saturno V">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z">
+                        </path>
+                    </svg>
+                    <div class="card__content">
+                        <p class="card__title">Saturno V</p>
+                        <p class="card__description">El Saturno V (Saturn V) fue un cohete desechable de múltiples fases
+                            y de combustible líquido usado en los programas Apolo y Skylab de la NASA. Su diseño estuvo
+                            a cargo del ingeniero aeroespacial alemán Wernher von Braun en el Marshall Space Flight
+                            Center (Centro de vuelo espacial Marshall) y sus principales constructores fueron Boeing,
+                            North American Aviation, Douglas Aircraft Company e IBM. Fue el más grande de la familia de
+                            cohetes Saturno.
+                            En sus vuelos, el Saturno V pasaba por tres fases: S-IC, la primera fase, S-II, la segunda,
+                            y S-IVB como última fase. En las tres se utilizaba oxígeno líquido (LOX) como oxidante. En
+                            la primera fase se usaba RP-1 (petróleo refinado) como combustible, mientras que las otras
+                            dos fases usaban hidrógeno líquido (LH2). En una misión, por término medio, el cohete
+                            funcionaba durante unos 20 minutos.</p>
+                        <p class="card__description">Características:</p>
+                        <ul class="card__description ">
+                            <li>Funcionalidades: Vehículo de lanzamiento del Programa Apolo.
+                                Vehículo de lanzamiento del Skylab
+                            </li>
+                            <li>Altura: 110,6 m</li>
+                            <li>Coste por lanzamiento: $185 millones en dólares de 1969-1971 dollars ($1.23 mil millones
+                                en 2019). (2024)</li>
+                            <li>Coste del proyecto: $6.417 mil millones en dólares de 1964-1973 (~$49.9 mil millones en
+                                2020)</li>
+                            <li>Capacidades: Carga útil a LEO (90 km, 30° inclinación): 140 000 kg</li>
+                            <li>Carga útil a ITL: 48 600 kg</li>
+                            <li>Vuelo inaugural: 9 de noviembre de 1967</li>
+                            <li>Último vuelo: 14 de mayo de 1973</li>
+                            <li>Motores de primera, segunda y tercera etapa: 5 F-1, 5 J-2, 1 J-2</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="container">
+            <article id="info-SLS">
+                <div class="card">
+                    <img src="images/SLS.jpg" alt="SLS">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z">
+                        </path>
+                    </svg>
+                    <div class="card__content">
+                        <p class="card__title">SLS</p>
+                        <p class="card__description">El sistema de lanzamiento espacial (en inglés: "Space Launch
+                            System" o "SLS"), es un vehículo de lanzamiento no recuperable superpesado estadounidense
+                            que está siendo desarrollado por la NASA desde 2011. El primer lanzamiento, denominado
+                            Artemis 1, tuvo lugar el 16 de noviembre de 2022 a las 06:47 UTC desde el Centro Espacial
+                            Kennedy. El SLS sustituye a los vehículos de lanzamiento Ares I y Ares V, que fueron
+                            cancelados junto con el resto del programa Constelación, un programa anterior destinado a
+                            volver a la Luna. El SLS está destinado a convertirse en el sucesor del retirado
+                            transbordador espacial y en el principal vehículo de lanzamiento de los planes de
+                            exploración del espacio profundo de la NASA hasta finales de la década de 2030. En el marco
+                            del programa Artemis se prevén vuelos lunares con tripulación, que conducirán a una posible
+                            misión humana a Marte. El SLS se está desarrollando en tres grandes fases con capacidades
+                            crecientes: Block 1, Block 1B y Block 2. A partir de noviembre de 2022, los vehículos de
+                            lanzamiento SLS Block 1 van a lanzar las tres primeras misiones Artemis13 y está previsto
+                            que cinco vuelos posteriores del SLS utilicen el Block 1B, tras lo cual todos los vuelos
+                            utilizarán el Block 2</p>
+                        <p class="card__description">Características:</p>
+                        <ul class="card__description ">
+                            <li>Funcionadilades: Lanzamiento espacial
+                            </li>
+                            <li>Altura: 98 m</li>
+                            <li>Masa: 2.610 toneladas</li>
+                            <li>Capacidades: Carga útil a OTB 70.000 a 130.000 kg</li>
+                            <li>Vuelo inaugural: 16 de noviembre de 2022</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="container">
+            <article id="info-DeltaIVHeavy">
+                <div class="card">
+                    <img src="images/DeltaIVHeavy.jpg" alt="DeltaIVHeavy">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z">
+                        </path>
+                    </svg>
+                    <div class="card__content">
+                        <p class="card__title">Delta IV Heavy</p>
+                        <p class="card__description">El Delta IV Heavy (Delta 9250H)(«Delta IV Pesado»), fue un
+                            vehículo de lanzamiento de carga pesada desechable, el tipo más grande de la familia Delta
+                            IV. Fue fabricado por United Launch Alliance y se lanzó por primera vez en 2004.
+                            El Delta IV Heavy utilizó dos Common Booster Core (CBC) adicionales como reforzadores de
+                            cohetes líquidos en lugar de los motores de cohetes sólidos GEM-60 utilizados por las
+                            versiones Delta IV Medium +. En el momento del despegue, los tres núcleos operan a pleno
+                            empuje, y 44 segundos más tarde el núcleo central se reduce hasta un 55% para conservar el
+                            combustible hasta la separación del refuerzo. Los propulsores se queman a los 242 segundos
+                            después del lanzamiento y se separan cuando el acelerador de núcleo vuelve a acelerar por
+                            completo. El núcleo se quema 86 segundos después, y la segunda etapa completa el ascenso a
+                            la órbita.</p>
+                            <p class="card__description">Características:</p>
+                            <ul class="card__description ">
+                                <li>Funcionadilades: Vehículo de lanzamiento pesado orbital
+                                </li>
+                                <li>Coste por lanzamiento: 350 Millones de USD (2018)</li>
+                                <li>Altura: 72 m</li>
+                                <li>Masa: 733.000 kilogramos</li>
+                                <li>Capacidades: Carga útil a OTB: 28.790 kilos. Carga útil a OTG: 14.220 kilos</li>
+                                <li>Vuelo inaugural: 24 de diciembre de 2004</li>
+                                <li>Último vuelo: 9 de abril de 2024</li>
+                            </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
     </section>
 
     <!-- Sección de comentarios -->
@@ -224,19 +353,26 @@
     <!-- Sección Acerca de Nosotros -->
     <section id="acerca-de">
         <h2>Acerca de Nosotros</h2>
-        <p>ShipShop es una tienda dedicada a ofrecer modelos detallados y de alta calidad de naves espaciales históricas y modernas. Nos apasiona el espacio y queremos compartir esa pasión con nuestros clientes, proporcionando productos que inspiran y educan.</p>
+        <p>ShipShop es una tienda dedicada a ofrecer modelos detallados y de alta calidad de naves espaciales históricas
+            y modernas. Nos apasiona el espacio y queremos compartir esa pasión con nuestros clientes, proporcionando
+            productos que inspiran y educan.</p>
         <h3>Nuestra Misión</h3>
-        <p>Nuestra misión es hacer que la exploración espacial sea accesible para todos, proporcionando modelos que capturan la imaginación y el espíritu de aventura. Creemos que el conocimiento del espacio y la exploración espacial es esencial para el futuro de la humanidad.</p>
+        <p>Nuestra misión es hacer que la exploración espacial sea accesible para todos, proporcionando modelos que
+            capturan la imaginación y el espíritu de aventura. Creemos que el conocimiento del espacio y la exploración
+            espacial es esencial para el futuro de la humanidad.</p>
     </section>
 
     <!-- Pie de página -->
     <footer>
         <p>&copy; 2023 ShipShop. Todos los derechos reservados.</p>
         <p>Síguenos en:
-            <a href="https://www.facebook.com/ShipShop" target="_blank"><img src="images/Facebook.jpg" alt="Facebook"></a>
+            <a href="https://www.facebook.com/ShipShop" target="_blank"><img src="images/Facebook.jpg"
+                    alt="Facebook"></a>
             <a href="https://www.twitter.com/ShipShop" target="_blank"><img src="images/X.jpg" alt="X"></a>
-            <a href="https://www.instagram.com/ShipShop" target="_blank"><img src="images/Instagram.jpg" alt="Instagram"></a>
+            <a href="https://www.instagram.com/ShipShop" target="_blank"><img src="images/Instagram.jpg"
+                    alt="Instagram"></a>
         </p>
     </footer>
 </body>
+
 </html>

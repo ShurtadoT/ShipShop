@@ -2,7 +2,7 @@
 
 /* Estilos generales */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family:ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
     color: #ffffff;
     background-color: #000000;
     margin: 0;
@@ -115,12 +115,13 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 900;
+    margin-bottom: 150px; /* Añade margen en la parte inferior para separarlo del resto del contenido de la tarjeta */
 }
 
 header h1 {
     font-size: 3em;
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family:  ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -128,7 +129,7 @@ header h1 {
 header h2 {
     font-size: 1.5em;
     margin: 10px 0 0 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family:  ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
     font-weight: 300;
 }
 
@@ -156,127 +157,186 @@ header::after {
     }
 }
 
-/* Sección de productos */
-#productos {
-    padding: 50px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-around;
-    background-color: #1c1c1c;
+/*Sección de productos*/
+
+h2 {
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  text-align: center;
+  font-weight: bold; /* Hace el texto en negrita */
+  margin-bottom: 60px; /* Añade margen en la parte inferior para separarlo del resto del contenido de la tarjeta */
+  font-size: 45px; /* Aumenta el tamaño de la fuente */
 }
 
-#productos h2 {
-    width: 100%;
-    color: white;
-    font-size: 2em;
-    text-align: center;
-    margin-bottom: 20px;
+.productos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 150px; /* Añade margen en la parte inferior para separar las secciones */
+  
 }
 
-article {
-    background-color: #333333;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 300px; /* Agregado para mejorar la apariencia */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agregado para mejorar la apariencia */
+.card1 {
+  width: 330px; /* Aumenta el ancho de la tarjeta */
+  height: 394px; /* Aumenta la altura de la tarjeta */
+  background: rgb(40,40,55);
+  background: linear-gradient(344deg, rgba(40,40,55,1) 0%, rgba(16,16,18,1) 50%);
+  box-shadow: 4px 6px 14px #00000036;
+  border-radius: 3px;
+  color: #F9F9F9;
+  padding: 16px;
+  transition: all .3s;
+  margin: 10px;
 }
 
-article img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+.card1:hover {
+  margin-top: -30px;
 }
 
-article h3 {
-    color: #ffffff;
-    font-size: 1.5em;
-    margin: 10px 0;
+.card1 h3 {
+  font-size: 20px; /* Aumenta el tamaño de la fuente */
+  font-weight: bold; /* Hace el texto en negrita */
+  text-align: center; /* Centra el texto */
+  margin-bottom: 10px; /* Añade margen en la parte inferior para separarlo del resto del contenido de la tarjeta */
 }
 
-article button {
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.card1 img {
+  border-radius: 3px;
+  margin-bottom: 20px;
 }
 
-article button:hover,
-article button:focus {
-    background-color: #000000;
-    color: #ffffff;
+/*.card .buy-now {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #0b0b0b;
+  color: #f6f5f5;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background-color .3s;
 }
 
-/* Sección de información */
-section#informacion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 20px;
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro para contraste */
-    color: #fff; /* Texto blanco */
+.card .buy-now:hover {
+  background-color: #0f0f0f;
+}
+  */
+
+button {
+  align-items: center;
+  background-color: transparent;
+  color: #fefdfd;
+  cursor: pointer;
+  display: flex;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+  text-transform: uppercase;
+  outline: 0;
+  border: 0;
+  padding: 1rem;
 }
 
-section#informacion article {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    margin-bottom: 100px; /* Más espacio entre los artículos */
-    transition: transform 0.3s;
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
-    padding: 20px;
-    border-radius: 10px;
+button:before {
+  background-color: #faf7f7;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  margin-right: 10px;
+  transition: all .42s cubic-bezier(.25,.8,.25,1);
+  width: 0;
 }
 
-section#informacion article:hover {
-    transform: translateY(-10px);
-}
-
-section#informacion article img {
-    width: 50%; /* Imagen más grande */
-    height: 400px; /* Imagen más alta */
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-section#informacion article div {
-    width: 45%; /* Ajustar para la imagen más grande */
+button:hover:before {
+  background-color: #fdfdfd;
+  width: 3rem;
 }
 
 
-#informacion h3 {
-    color: #ffffff;
-    font-size: 2em;
-    margin-top: 0;
+
+/*Sección de información*/
+.card {
+  position: relative;
+  width: 950px;
+  height: 700px;
+  background: linear-gradient(-60deg, #343246 0%, #131313 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  margin: 40px;
 }
 
-#informacion p,
-#informacion ul {
-    color: #cccccc;
-    line-height: 1.6;
+.card svg {
+  width: 48px;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-#informacion h4 {
-    color: #ffffff;
-    font-size: 1.5em;
-    margin-bottom: 10px;
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-#informacion ul {
-    padding-left: 20px;
+.card__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  /*background-color: #080808;*/
+  background: linear-gradient(344deg, rgba(40,40,55,1) 0%, rgba(16,16,18,1) 50%);
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-#informacion ul li {
-    margin-bottom: 5px;
+.card:hover .card__content {
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 1;
 }
+
+.card__title {
+  margin: 0;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  font-size: 44px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.card__description {
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  margin: 10px 0 0;
+  font-size: 18px;
+  color: #d1cfcf;
+  line-height: 1.4;
+}
+
+.card:hover svg {
+  scale: 0;
+}
+
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #090909;
+}
+
+
+    
 
 /* Sección de comentarios */
 #comentarios {
@@ -285,6 +345,7 @@ section#informacion article div {
 }
 
 #comentarios h2 {
+    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
     color: #ffffff;
     font-size: 2em;
     text-align: center;
@@ -300,6 +361,7 @@ section#informacion article div {
 }
 
 #form-comentario label {
+    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
     color: #ffffff;
     font-size: 1em;
 }
@@ -337,12 +399,14 @@ section#informacion article div {
 }
 
 #acerca-de h2 {
+    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
     font-size: 2em;
     text-align: center;
     margin-bottom: 20px;
 }
 
 #acerca-de p {
+    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
     font-size: 1.2em;
     line-height: 1.6;
     margin-bottom: 20px;
@@ -350,6 +414,7 @@ section#informacion article div {
 }
 
 #acerca-de h3 {
+    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
     font-size: 1.5em;
     text-align: center;
     margin-bottom: 10px;
@@ -357,6 +422,7 @@ section#informacion article div {
 
 /* Pie de página */
 footer {
+    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
     background-color: #000000;
     color: #ffffff;
     text-align: center;
@@ -365,6 +431,7 @@ footer {
 }
 
 footer p {
+    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
     margin: 10px 0;
     font-size: 1em;
 }
@@ -375,6 +442,93 @@ footer img {
     margin: 0 10px;
     vertical-align: middle;
 }
+
+footer .wrapper {
+    display: inline-flex;
+    list-style: none;
+    height: 120px;
+    width: 100%;
+    padding-top: 40px;
+    font-family: "Poppins", sans-serif;
+    justify-content: center;
+  }
+  
+  footer .wrapper .icon {
+    position: relative;
+    background: #fff;
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  footer .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  footer .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  footer .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  footer .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  footer .wrapper .facebook:hover,
+  footer .wrapper .facebook:hover .tooltip,
+  footer .wrapper .facebook:hover .tooltip::before {
+    background: #1877f2;
+    color: #fff;
+  }
+  
+  footer .wrapper .twitter:hover,
+  footer .wrapper .twitter:hover .tooltip,
+  footer .wrapper .twitter:hover .tooltip::before {
+    background: #1da1f2;
+    color: #fff;
+  }
+  
+  footer .wrapper .instagram:hover,
+  footer .wrapper .instagram:hover .tooltip,
+  footer .wrapper .instagram:hover .tooltip::before {
+    background: #e4405f;
+    color: #fff;
+  }
+  
 
 @media (max-width: 600px) {
     #productos {
@@ -391,3 +545,5 @@ footer img {
         font-size: 0.9em;
     }
 }
+
+
