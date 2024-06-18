@@ -26,89 +26,182 @@ html {
 /* Barra de navegación */
 
 nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  
-nav {
-    background-color: #1c1c1c;
-    padding: 10px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 1000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(344deg, rgba(40,40,55,1) 0%, rgba(16,16,18,1) 50%);
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 60px;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: center; /* Centrar contenido horizontalmente */
+  align-items: center;
+  width: 100%;
+}
+
+.cart-container {
+  margin-left: 120px; /* Mueve el carrito a la izquierda */
+}
+
+.cart-container a {
+  color: #ffffff;
+  padding: 10px;
+  display: block;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.cart-container a:hover,
+.cart-container a:focus {
+  color: #000000;
+  background-color: #ffffff;
+  border-radius: 5px;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 90px; /* Aumentar el espaciado entre los elementos del menú */
 }
 
 nav li {
-    position: relative;
+  position: relative;
 }
 
 nav a {
-    color: #ffffff;
-    padding: 10px;
-    display: block;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    text-decoration: none; /* Eliminar subrayado */
+  color: #ffffff;
+  padding: 10px;
+  display: block;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  text-decoration: none; /* Eliminar subrayado */
 }
 
 nav a:hover,
 nav a:focus {
-    color: #000000;
-    background-color: #ffffff;
-    border-radius: 5px;
-    text-decoration: none; /* Asegurarse de eliminar el subrayado en hover y focus */
+  color: #000000;
+  background-color: #ffffff;
+  border-radius: 5px;
+  text-decoration: none; /* Asegurarse de eliminar el subrayado en hover y focus */
 }
 
 nav ul ul {
-    display: none;
-    position: absolute;
-    background-color: #333333;
-    top: 100%;
-    left: 0;
-    padding: 0;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1100;
+  display: none;
+  position: absolute;
+  background-color: #333333;
+  top: 100%;
+  left: 0;
+  padding: 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1100;
 }
 
 nav ul ul li {
-    width: 180px;
+  width: 180px;
 }
 
 nav ul ul a {
-    padding: 10px;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    text-decoration: none; /* Eliminar subrayado */
+  padding: 10px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  text-decoration: none; /* Eliminar subrayado */
 }
 
 nav ul ul a:hover,
 nav ul ul a:focus {
-    background-color: #555555;
-    color: #ffffff;
-    text-decoration: none; /* Asegurarse de eliminar el subrayado en hover y focus */
+  background-color: #555555;
+  color: #ffffff;
+  text-decoration: none; /* Asegurarse de eliminar el subrayado en hover y focus */
 }
 
 nav li:hover > ul {
-    display: block;
-    animation: fadeIn 0.3s ease-in-out;
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
+
+/* CSS para el input */
+.input-container {
+  position: relative;
+  width: 250px;
+  margin-left: 120px; /* Ajustar según el espacio deseado entre el menú y el input */
+  display: flex;
+  align-items: center;
+}
+
+.input-container input[type="text"] {
+  font-size: 20px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 5px 0;
+  background-color: transparent;
+  outline: none;
+  color: #fff;
+}
+
+.input-container .label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ccc;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.input-container input[type="text"]:focus ~ .label,
+.input-container input[type="text"]:valid ~ .label {
+  top: -20px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.input-container .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+
+.input-container input[type="text"]:focus ~ .underline,
+.input-container input[type="text"]:valid ~ .underline {
+  transform: scaleX(1);
+}
+
+.search-button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 10px; /* Espacio entre el input y el botón */
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.search-button:hover,
+.search-button:focus {
+  color: #000;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
 
 /* Encabezado */
 header {
-    background-color: #000000;
+
     color: #ffffff;
     text-align: center;
     padding: 50px 20px;
@@ -159,11 +252,11 @@ header::after {
 
 /*Sección de productos*/
 
-h2 {
+div h2 {
   font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
   text-align: center;
   font-weight: bold; /* Hace el texto en negrita */
-  margin-bottom: 60px; /* Añade margen en la parte inferior para separarlo del resto del contenido de la tarjeta */
+  margin-bottom: 20px; /* Añade margen en la parte inferior para separarlo del resto del contenido de la tarjeta */
   font-size: 45px; /* Aumenta el tamaño de la fuente */
 }
 
@@ -176,16 +269,16 @@ h2 {
 }
 
 .card1 {
-  width: 330px; /* Aumenta el ancho de la tarjeta */
-  height: 394px; /* Aumenta la altura de la tarjeta */
+  width: 360px; /* Aumenta el ancho de la tarjeta */
+  height: 425px; /* Aumenta la altura de la tarjeta */
   background: rgb(40,40,55);
   background: linear-gradient(344deg, rgba(40,40,55,1) 0%, rgba(16,16,18,1) 50%);
   box-shadow: 4px 6px 14px #00000036;
-  border-radius: 3px;
+  border-radius: 10px;
   color: #F9F9F9;
-  padding: 16px;
+  padding: 5px;
   transition: all .3s;
-  margin: 10px;
+  margin: 55px;
 }
 
 .card1:hover {
@@ -193,35 +286,18 @@ h2 {
 }
 
 .card1 h3 {
-  font-size: 20px; /* Aumenta el tamaño de la fuente */
+  font-size: 25px; /* Aumenta el tamaño de la fuente */
   font-weight: bold; /* Hace el texto en negrita */
   text-align: center; /* Centra el texto */
   margin-bottom: 10px; /* Añade margen en la parte inferior para separarlo del resto del contenido de la tarjeta */
 }
 
 .card1 img {
-  border-radius: 3px;
-  margin-bottom: 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
-/*.card .buy-now {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #0b0b0b;
-  color: #f6f5f5;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 3px;
-  transition: background-color .3s;
-}
-
-.card .buy-now:hover {
-  background-color: #0f0f0f;
-}
-  */
-
-button {
+.buy-now {
   align-items: center;
   background-color: transparent;
   color: #fefdfd;
@@ -238,7 +314,7 @@ button {
   padding: 1rem;
 }
 
-button:before {
+.buy-now:before {
   background-color: #faf7f7;
   content: "";
   display: inline-block;
@@ -248,7 +324,7 @@ button:before {
   width: 0;
 }
 
-button:hover:before {
+.buy-now:hover:before {
   background-color: #fdfdfd;
   width: 3rem;
 }
@@ -336,60 +412,6 @@ button:hover:before {
 }
 
 
-    
-
-/* Sección de comentarios */
-#comentarios {
-    padding: 50px 20px;
-    background-color: #1c1c1c;
-}
-
-#comentarios h2 {
-    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-    color: #ffffff;
-    font-size: 2em;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#form-comentario {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-#form-comentario label {
-    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-    color: #ffffff;
-    font-size: 1em;
-}
-
-#form-comentario input,
-#form-comentario textarea {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-#form-comentario button {
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-#form-comentario button:hover,
-#form-comentario button:focus {
-    background-color: #000000;
-    color: #ffffff;
-}
 
 /* Sección Acerca de Nosotros */
 #acerca-de {
@@ -436,99 +458,80 @@ footer p {
     font-size: 1em;
 }
 
-footer img {
-    width: 24px;
-    height: 24px;
-    margin: 0 10px;
-    vertical-align: middle;
+.card2 {
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(4, 4, 4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 25px;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
 }
 
-footer .wrapper {
-    display: inline-flex;
-    list-style: none;
-    height: 120px;
-    width: 100%;
-    padding-top: 40px;
-    font-family: "Poppins", sans-serif;
-    justify-content: center;
-  }
-  
-  footer .wrapper .icon {
-    position: relative;
-    background: #fff;
-    border-radius: 50%;
-    margin: 10px;
-    width: 50px;
-    height: 50px;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-  
-  footer .wrapper .tooltip {
-    position: absolute;
-    top: 0;
-    font-size: 14px;
-    background: #fff;
-    color: #fff;
-    padding: 5px 8px;
-    border-radius: 5px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+/* for all social containers*/
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: .3s;
+}
+/* twitter*/
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: .3s;
+}
+/* linkdin*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: .3s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #128C7E;
+  transition-duration: .3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: .3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
     opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
-  
-  footer .wrapper .tooltip::before {
-    position: absolute;
-    content: "";
-    height: 8px;
-    width: 8px;
-    background: #fff;
-    bottom: -3px;
-    left: 50%;
-    transform: translate(-50%) rotate(45deg);
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-  
-  footer .wrapper .icon:hover .tooltip {
-    top: -45px;
+
+  100% {
+    transform: translateY(0);
     opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
   }
-  
-  footer .wrapper .icon:hover span,
-  .wrapper .icon:hover .tooltip {
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
-  }
-  
-  footer .wrapper .facebook:hover,
-  footer .wrapper .facebook:hover .tooltip,
-  footer .wrapper .facebook:hover .tooltip::before {
-    background: #1877f2;
-    color: #fff;
-  }
-  
-  footer .wrapper .twitter:hover,
-  footer .wrapper .twitter:hover .tooltip,
-  footer .wrapper .twitter:hover .tooltip::before {
-    background: #1da1f2;
-    color: #fff;
-  }
-  
-  footer .wrapper .instagram:hover,
-  footer .wrapper .instagram:hover .tooltip,
-  footer .wrapper .instagram:hover .tooltip::before {
-    background: #e4405f;
-    color: #fff;
-  }
-  
+}
+
+
 
 @media (max-width: 600px) {
     #productos {
