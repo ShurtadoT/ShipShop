@@ -130,27 +130,33 @@ document.addEventListener("DOMContentLoaded", function() {
     updateCart();
 
 
-    // Funcionalidad para la búsqueda
-    const searchButton = document.getElementById('search-button');
-    const searchInput = document.getElementById('search-input');
-
-    const executeSearch = () => {
-        const query = searchInput.value.toLowerCase();
-        document.querySelectorAll('.productos article').forEach(product => {
-            const title = product.querySelector('h3').innerText.toLowerCase();
-            if (title.includes(query)) {
-                product.style.display = 'block';
-            } else {
-                product.style.display = 'none';
-            }
-        });
-    };
-
-    searchButton.addEventListener('click', executeSearch);
-
-    searchInput.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
-            executeSearch();
-        }
-    });
+     // Funcionalidad de búsqueda
+     const searchButton = document.querySelector(".search-button");
+     const searchInput = document.querySelector("#input");
+ 
+     const performSearch = () => {
+         const query = searchInput.value.toLowerCase();
+         const links = document.querySelectorAll("nav ul a");
+         let found = false;
+ 
+         links.forEach(link => {
+             if (link.textContent.toLowerCase().includes(query)) {
+                 window.location.href = link.getAttribute("href");
+                 found = true;
+             }
+         });
+ 
+         if (!found) {
+             alert("No se encontraron resultados para su búsqueda.");
+         }
+     };
+ 
+     searchButton.addEventListener("click", performSearch);
+ 
+     searchInput.addEventListener("keydown", (e) => {
+         if (e.key === "Enter") {
+             e.preventDefault();
+             performSearch();
+         }
+     });
 });
