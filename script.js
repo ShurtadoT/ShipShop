@@ -63,13 +63,16 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to show the modal
     const showModal = (product) => {
         modalContent.innerHTML = `
-            <div class="card1">
-                <h3>${product.nombre}</h3>
-                <img src="${product.imagen}" alt="${product.nombre}" style="width:100%;height:auto;">
-                <p>${product.descripcion}</p>
-                <p>Price: $${product.precio}</p>
-                <button class="buy-now" data-id="${product.id}">Shop Now</button>
-            </div>
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="modal-product-info">
+                    <h3>${product.nombre}</h3>
+                    <img src="${product.imagen}" alt="${product.nombre}" style="width:100%;height:auto;">
+                    <p>${product.descripcion}</p>
+                    <p>Price: $${product.precio}</p>
+                    <button class="buy-now" data-id="${product.id}">Shop Now</button>}
+                </div>
+            </div>  
         `;
         modal.style.display = "block";
 
