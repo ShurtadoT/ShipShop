@@ -70,19 +70,19 @@
             <article id="FalconHeavy" class="card1">
                 <h3>Falcon Heavy</h3>
                 <img src="images/FalconHeavy1.jpg" alt="Imagen del Falcon 1" style="width:100%;height:auto;">
-                <button class="buy-now">Shop Now</button>
+                <button class="buy-now" data id="1">Shop Now</button>
             </article>
 
             <article id="Falcon9" class="card1">
                 <h3>Falcon 9</h3>
                 <img src="images/Falcon9.jpg" alt="Imagen del Falcon 9" style="width:100%;height:auto;">
-                <button class="buy-now">Shop Now</button>
+                <button class="buy-now" data id="2">Shop Now</button>
             </article>
 
             <article id="Starship" class="card1">
                 <h3>Starship</h3>
                 <img src="images/Starship.jpg" alt="Imagen del Starship" style="width:100%;height:auto;">
-                <button class="buy-now">Shop Now</button>
+                <button class="buy-now" data id="3">Shop Now</button>
             </article>
         </section>
 
@@ -91,23 +91,32 @@
             <article id="SaturnoV" class="card1">
                 <h3>Saturno V</h3>
                 <img src="images/SaturnoV1.jpg" alt="Imagen del Saturno V" style="width:100%;height:auto;">
-                <button class="buy-now">Shop Now</button>
+                <button class="buy-now" data id="4">Shop Now</button>
             </article>
 
             <article id="SLS" class="card1">
                 <h3>SLS</h3>
                 <img src="images/SLS1.jpg" alt="Imagen del SLS" style="width:100%;height:auto;">
-                <button class="buy-now">Shop Now</button>
+                <button class="buy-now" data id="5">Shop Now</button>
             </article>
 
             <article id="DeltaIVHeavy" class="card1">
                 <h3>Delta IV Heavy</h3>
                 <img src="images/DeltaIVHeavy1.jpg" alt="Imagen del Delta IV Heavy" style="width:100%;height:auto;">
-                <button class="buy-now">Shop Now</button>
+                <button class="buy-now" data id="6">Shop Now</button>
             </article>
         </section>
     </div>
 
+    <!-- Modal para mostrar la información del producto -->
+    <div id="product-modal" class="product-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-product-info"></div>
+        </div>
+    </div>
+
+    
     <!-- Información de los productos -->
     <section id="informacion">
         <div class="container">
@@ -392,7 +401,7 @@
           
     </footer>
 
-
+    <script src="script.js"></script> 
 </body>
 
 </html>
