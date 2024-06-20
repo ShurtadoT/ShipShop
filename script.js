@@ -129,17 +129,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Initialize the cart
     updateCart();
 
-    // Funcionalidad para el menú desplegable
-    const submenuLinks = document.querySelectorAll('nav ul ul li a');
-
-    submenuLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const sectionId = event.target.getAttribute('href').substring(1);
-            const section = document.getElementById(sectionId);
-            section.scrollIntoView({ behavior: 'smooth' });
-        });
-    });
 
     // Funcionalidad para la búsqueda
     const searchButton = document.getElementById('search-button');
