@@ -1,7 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-// script.js
-
-    document.addEventListener("DOMContentLoaded", function() {
         
         // URL del archivo JSON
         const url = 'products.json';
@@ -63,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
             modal.style.display = "none";
         }
         }
-    });
+    
     
 
     
