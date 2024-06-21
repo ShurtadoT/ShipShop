@@ -329,27 +329,72 @@ div h2 {
   width: 3rem;
 }
 
-/* Estilos del modal del producto */
-.product-modal {
-  display: none;
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 200px;
+  cursor: pointer;
+  position: relative;
+}
+
+.product-card img {
+  width: 100%;
+}
+
+.product-card h2 {
+  font-size: 1.2em;
+  margin: 10px;
+}
+
+.product-card p {
+  font-size: 1em;
+  margin: 10px;
+}
+
+.product-card .price {
+  font-weight: bold;
+  color: #007bff;
+  margin: 10px;
+}
+
+.product-card button {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 10px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.product-card button:hover {
+  background-color: #218838;
+}
+
+/* Estilos para el modal */
+.modal {
+  display: none; 
   position: fixed;
-  z-index: 1000;
+  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
 }
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  max-width: 500px;
-  border-radius: 10px;
 }
 
 .close {
@@ -366,6 +411,9 @@ div h2 {
   cursor: pointer;
 }
 
+.modal-content img {
+  max-width: 100%;
+}
 
 
 
