@@ -1,69 +1,50 @@
-document.addEventListener("DOMContentLoaded", function() {
-        
-        // URL del archivo JSON
-        const url = 'products.json';
-    
-        // Obtener el contenedor de productos
-        const productsContainer = document.getElementById('products');
-    
-        // Función para crear una tarjeta de producto
-        function createProductCard(product) {
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <h2>${product.name}</h2>
-            <p class="price">${product.price}</p>
-            <button class="shop-now">Shop Now</button>
-        `;
-    
-        // Evento para mostrar el modal con la información del producto
-        card.addEventListener('click', function(event) {
-            if (!event.target.classList.contains('shop-now')) {
-            showModal(product);
-            }
-        });
-    
-        return card;
-        }
-    
-        // Fetch para obtener el JSON
-        fetch(url)
+document.addEventListener("DOMContentLoaded", function () {
+
+    const modal = document.getElementById("productModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalImage = document.getElementById("modalImage");
+    const modalDescription = document.getElementById("modalDescription");
+    const modalPrice = document.getElementById("modalPrice");
+    const span = document.getElementsByClassName("close")[0];
+
+    // Cargar los productos desde el archivo JSON
+    fetch('productos.json')
         .then(response => response.json())
-        .then(products => {
-            products.forEach(product => {
-            const card = createProductCard(product);
-            productsContainer.appendChild(card);
+        .then(data => {
+            console.log(data); // Verificar que los datos se cargan
+            const products = data.productos;
+            
+            document.querySelectorAll('.buy-now').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    const productId = this.getAttribute('data-id');
+                    console.log("Button clicked, product ID:", productId); // Verificar el ID del producto
+                    const product = products.find(p => p.id == productId);
+                    
+                    if (product) {
+                        console.log("Product found:", product); // Verificar que se encontró el producto
+                        modalTitle.textContent = product.nombre;
+                        modalImage.src = product.imagen;
+                        modalDescription.textContent = product.descripcion;
+                        modalPrice.textContent = "Precio: $" + product.precio;
+                        
+                        modal.style.display = "block";
+                    } else {
+                        console.error("Product not found for ID:", productId);
+                    }
+                });
             });
         })
-        .catch(error => console.error('Error fetching the JSON:', error));
-    
-        // Función para mostrar el modal
-        function showModal(product) {
-        const modal = document.getElementById('product-modal');
-        document.getElementById('modal-title').textContent = product.name;
-        document.getElementById('modal-image').src = product.image;
-        document.getElementById('modal-description').textContent = product.description;
-        modal.style.display = "block";
-        }
-    
-        // Cerrar el modal
-        const modal = document.getElementById('product-modal');
-        const span = document.getElementsByClassName('close')[0];
-    
-        span.onclick = function() {
+        .catch(error => console.error('Error loading products:', error));
+
+    span.onclick = function() {
         modal.style.display = "none";
-        }
-    
-        window.onclick = function(event) {
+    }
+
+    window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
-        }
-    
-    
-
-    
+    }
 
     // Funcionalidad de búsqueda
     const searchButton = document.querySelector(".search-button");
