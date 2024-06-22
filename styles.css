@@ -2,26 +2,27 @@
 
 /* Estilos generales */
 body {
-    font-family:ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-    color: #ffffff;
-    background-color: #000000;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  color: #ffffff;
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
 a {
-    color: #ffffff;
-    text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
+
 html {
-    scroll-behavior: smooth;
-  }
-  
+  scroll-behavior: smooth;
+}
+
 
 /* Barra de navegación */
 
@@ -29,7 +30,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: linear-gradient(344deg, rgba(40,40,55,1) 0%, rgba(16,16,18,1) 50%);
+  background: linear-gradient(344deg, rgba(40, 40, 55, 1) 0%, rgba(16, 16, 18, 1) 50%);
   padding: 10px 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-bottom: 60px;
@@ -37,13 +38,15 @@ nav {
 
 .nav-content {
   display: flex;
-  justify-content: center; /* Centrar contenido horizontalmente */
+  justify-content: center;
+  /* Centrar contenido horizontalmente */
   align-items: center;
   width: 100%;
 }
 
 .cart-container {
-  margin-left: 120px; /* Mueve el carrito a la izquierda */
+  margin-left: 120px;
+  /* Mueve el carrito a la izquierda */
 }
 
 .cart-container a {
@@ -66,7 +69,8 @@ nav ul {
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 90px; /* Aumentar el espaciado entre los elementos del menú */
+  gap: 90px;
+  /* Aumentar el espaciado entre los elementos del menú */
 }
 
 nav li {
@@ -78,7 +82,8 @@ nav a {
   padding: 10px;
   display: block;
   transition: color 0.3s ease, background-color 0.3s ease;
-  text-decoration: none; /* Eliminar subrayado */
+  text-decoration: none;
+  /* Eliminar subrayado */
 }
 
 nav a:hover,
@@ -86,7 +91,8 @@ nav a:focus {
   color: #000000;
   background-color: #ffffff;
   border-radius: 5px;
-  text-decoration: none; /* Asegurarse de eliminar el subrayado en hover y focus */
+  text-decoration: none;
+  /* Asegurarse de eliminar el subrayado en hover y focus */
 }
 
 nav ul ul {
@@ -108,31 +114,39 @@ nav ul ul li {
 nav ul ul a {
   padding: 10px;
   transition: color 0.3s ease, background-color 0.3s ease;
-  text-decoration: none; /* Eliminar subrayado */
+  text-decoration: none;
+  /* Eliminar subrayado */
 }
 
 nav ul ul a:hover,
 nav ul ul a:focus {
   background-color: #555555;
   color: #ffffff;
-  text-decoration: none; /* Asegurarse de eliminar el subrayado en hover y focus */
+  text-decoration: none;
+  /* Asegurarse de eliminar el subrayado en hover y focus */
 }
 
-nav li:hover > ul {
+nav li:hover>ul {
   display: block;
   animation: fadeIn 0.3s ease-in-out;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* CSS para el input */
 .input-container {
   position: relative;
   width: 250px;
-  margin-left: 120px; /* Ajustar según el espacio deseado entre el menú y el input */
+  margin-left: 120px;
+  /* Ajustar según el espacio deseado entre el menú y el input */
   display: flex;
   align-items: center;
 }
@@ -146,8 +160,8 @@ nav li:hover > ul {
   background-color: transparent;
   outline: none;
   color: #fff;
-  font-family:  ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-  
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+
 }
 
 .input-container .label {
@@ -159,8 +173,8 @@ nav li:hover > ul {
   pointer-events: none;
 }
 
-.input-container input[type="text"]:focus ~ .label,
-.input-container input[type="text"]:valid ~ .label {
+.input-container input[type="text"]:focus~.label,
+.input-container input[type="text"]:valid~.label {
   top: -20px;
   font-size: 16px;
   color: #fff;
@@ -177,8 +191,8 @@ nav li:hover > ul {
   transition: all 0.3s ease;
 }
 
-.input-container input[type="text"]:focus ~ .underline,
-.input-container input[type="text"]:valid ~ .underline {
+.input-container input[type="text"]:focus~.underline,
+.input-container input[type="text"]:valid~.underline {
   transform: scaleX(1);
 }
 
@@ -189,7 +203,8 @@ nav li:hover > ul {
   font-size: 20px;
   cursor: pointer;
   padding: 5px;
-  margin-left: 10px; /* Espacio entre el input y el botón */
+  margin-left: 10px;
+  /* Espacio entre el input y el botón */
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
@@ -203,77 +218,84 @@ nav li:hover > ul {
 
 /* Encabezado */
 header {
-    color: #ffffff;
-    text-align: center;
-    padding: 50px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 900;
-    margin-bottom: 150px; /* Añade margen en la parte inferior para separarlo del resto del contenido de la tarjeta */
+  color: #ffffff;
+  text-align: center;
+  padding: 50px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 900;
+  margin-bottom: 150px;
+  /* Añade margen en la parte inferior para separarlo del resto del contenido de la tarjeta */
 }
 
 header h1 {
-    font-size: 3em;
-    margin: 0;
-    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+  font-size: 3em;
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 header h2 {
-    font-size: 1.5em;
-    margin: 10px 0 0 0;
-    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-    font-weight: 300;
+  font-size: 1.5em;
+  margin: 10px 0 0 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-weight: 300;
 }
 
 header::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 4px;
-    background-color: #ffffff;
-    margin: 20px auto 0;
-    border-radius: 2px;
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #ffffff;
+  margin: 20px auto 0;
+  border-radius: 2px;
 }
 
 @media (max-width: 600px) {
-    header {
-        padding: 30px 10px;
-    }
+  header {
+    padding: 30px 10px;
+  }
 
-    header h1 {
-        font-size: 2.5em;
-    }
+  header h1 {
+    font-size: 2.5em;
+  }
 
-    header h2 {
-        font-size: 1.2em;
-    }
+  header h2 {
+    font-size: 1.2em;
+  }
 }
 
 /*Sección de productos*/
 
 div h2 {
-  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   text-align: center;
-  font-weight: bold; /* Hace el texto en negrita */
-  margin-bottom: 20px; /* Añade margen en la parte inferior para separarlo del resto del contenido de la tarjeta */
-  font-size: 45px; /* Aumenta el tamaño de la fuente */
+  font-weight: bold;
+  /* Hace el texto en negrita */
+  margin-bottom: 20px;
+  /* Añade margen en la parte inferior para separarlo del resto del contenido de la tarjeta */
+  font-size: 45px;
+  /* Aumenta el tamaño de la fuente */
 }
 
 .productos {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 150px; /* Añade margen en la parte inferior para separar las secciones */
-  
+  margin-bottom: 150px;
+  /* Añade margen en la parte inferior para separar las secciones */
+
 }
 
 .card1 {
-  width: 360px; /* Aumenta el ancho de la tarjeta */
-  height: 425px; /* Aumenta la altura de la tarjeta */
-  background: rgb(40,40,55);
-  background: linear-gradient(344deg, rgba(40,40,55,1) 0%, rgba(16,16,18,1) 50%);
+  width: 360px;
+  /* Aumenta el ancho de la tarjeta */
+  height: 425px;
+  /* Aumenta la altura de la tarjeta */
+  background: rgb(40, 40, 55);
+  background: linear-gradient(344deg, rgba(40, 40, 55, 1) 0%, rgba(16, 16, 18, 1) 50%);
   box-shadow: 4px 6px 14px #00000036;
   border-radius: 10px;
   color: #F9F9F9;
@@ -287,10 +309,14 @@ div h2 {
 }
 
 .card1 h3 {
-  font-size: 25px; /* Aumenta el tamaño de la fuente */
-  font-weight: bold; /* Hace el texto en negrita */
-  text-align: center; /* Centra el texto */
-  margin-bottom: 10px; /* Añade margen en la parte inferior para separarlo del resto del contenido de la tarjeta */
+  font-size: 25px;
+  /* Aumenta el tamaño de la fuente */
+  font-weight: bold;
+  /* Hace el texto en negrita */
+  text-align: center;
+  /* Centra el texto */
+  margin-bottom: 10px;
+  /* Añade margen en la parte inferior para separarlo del resto del contenido de la tarjeta */
 }
 
 .card1 img {
@@ -304,7 +330,7 @@ div h2 {
   color: #fefdfd;
   cursor: pointer;
   display: flex;
-  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.5;
@@ -321,7 +347,7 @@ div h2 {
   display: inline-block;
   height: 1px;
   margin-right: 10px;
-  transition: all .42s cubic-bezier(.25,.8,.25,1);
+  transition: all .42s cubic-bezier(.25, .8, .25, 1);
   width: 0;
 }
 
@@ -333,70 +359,95 @@ div h2 {
 
 /* Estilos del Modal */
 .modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto; 
-  background-color: rgba(0,0,0,0.8); 
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modal-content {
-  background: linear-gradient(344deg, rgba(40,40,55,1) 0%, rgba(16,16,18,1) 50%);
-  margin: auto; 
-  padding: 20px;
-  width: 80%; 
-  max-width: 900px; /* Aumenta el ancho máximo */
+  background: linear-gradient(344deg, rgba(40, 40, 55, 1) 0%, rgba(16, 16, 18, 1) 50%);
+  position: relative;
+  color: white;
+  padding: 10px 20px;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-  color: #F9F9F9;
+  max-width: 800px;
+  margin: auto;
+}
+
+.modal-header {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  /* Centra el contenido horizontalmente */
   align-items: center;
+  position: relative;
+  /* Necesario para posicionar la 'x' */
+  margin-bottom: 30px;
 }
 
 .modal-title {
-  font-size: 30px;
-  text-align: center;
-  margin-bottom: 20px;
-  align-self: center; /* Cambia align-items por align-self para centrar el título */
+  font-size: 40px;
+  white-space: nowrap;
+  /* Evita que el título se divida en varias líneas */
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  /* Alinea la 'x' a la derecha */
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
 }
 
 .modal-body {
   display: flex;
-  align-items: flex-start; /* Cambia a flex-start para alinear los elementos al principio verticalmente */
-  width: 100%; /* Ajusta el ancho del modal-body */
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start;
 }
 
 .modal-body img {
-  width: 40%; /* Ajusta el ancho de la imagen para que sea más pequeña */
+  width: 40%;
+  /* Ajusta el ancho de la imagen */
   border-radius: 10px;
-  margin-right: 20px; /* Añade margen a la derecha de la imagen */
-  
+  margin-right: 20px;
+  /* Añadir un margen derecho para el espaciado */
 }
 
 .modal-details {
-  width: 70%; /* Ajusta el ancho de los detalles */
-  display: flex;
-  flex-direction: column; /* Asegura que los elementos dentro de .modal-details estén alineados verticalmente */
-  justify-content: flex-start; /* Alinea los elementos al principio del contenedor */
-  font-family:  ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-
+  width: 65%;
+  /* Ajusta el ancho de los detalles */
+  padding-left: 10px;
 }
 
 .modal-details p {
-  margin: 10px 0; /* Ajusta el margen de los párrafos */
-  font-size: 20px;
+  margin: 10px 0;
+  /* Ajusta el margen */
+  font-size: 18px;
 }
+
 
 .close {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
+  cursor: pointer;
+
 }
 
 .close:hover,
@@ -443,7 +494,7 @@ div h2 {
   padding: 20px;
   box-sizing: border-box;
   /*background-color: #080808;*/
-  background: linear-gradient(344deg, rgba(40,40,55,1) 0%, rgba(16,16,18,1) 50%);
+  background: linear-gradient(344deg, rgba(40, 40, 55, 1) 0%, rgba(16, 16, 18, 1) 50%);
   opacity: 0;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -455,14 +506,14 @@ div h2 {
 
 .card__title {
   margin: 0;
-  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   font-size: 44px;
   color: #ffffff;
   font-weight: 700;
 }
 
 .card__description {
-  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   margin: 10px 0 0;
   font-size: 18px;
   color: #d1cfcf;
@@ -492,47 +543,48 @@ div h2 {
 
 /* Sección Acerca de Nosotros */
 #acerca-de {
-    padding: 50px 20px;
-    background-color: #1c1c1c;
-    color: #ffffff;
+  padding: 50px 20px;
+  background-color: #1c1c1c;
+  color: #ffffff;
 }
 
 #acerca-de h2 {
-    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-    font-size: 2em;
-    text-align: center;
-    margin-bottom: 20px;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 #acerca-de p {
-    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    text-align: center;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 #acerca-de h3 {
-    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-    font-size: 1.5em;
-    text-align: center;
-    margin-bottom: 10px;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 /* Pie de página */
 footer {
-    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-    background-color: #000000;
-    color: #ffffff;
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Sombra superior */
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+  /* Sombra superior */
 }
 
 footer p {
-    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-    margin: 10px 0;
-    font-size: 1em;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  margin: 10px 0;
+  font-size: 1em;
 }
 
 .card2 {
@@ -558,21 +610,25 @@ footer p {
   overflow: hidden;
   transition-duration: .3s;
 }
+
 /* instagram*/
 .containerOne:hover {
   background-color: #d62976;
   transition-duration: .3s;
 }
+
 /* twitter*/
 .containerTwo:hover {
   background-color: #00acee;
   transition-duration: .3s;
 }
+
 /* linkdin*/
 .containerThree:hover {
   background-color: #0072b1;
   transition-duration: .3s;
 }
+
 /* Whatsapp*/
 .containerFour:hover {
   background-color: #128C7E;
@@ -611,19 +667,17 @@ footer p {
 
 
 @media (max-width: 600px) {
-    #productos {
-        flex-direction: column;
-        align-items: center;
-    }
+  #productos {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    #informacion article {
-        flex-direction: column;
-        align-items: center;
-    }
+  #informacion article {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    footer p {
-        font-size: 0.9em;
-    }
+  footer p {
+    font-size: 0.9em;
+  }
 }
-
-

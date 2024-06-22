@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalImage = document.getElementById("modalImage");
     const modalDescription = document.getElementById("modalDescription");
     const modalPrice = document.getElementById("modalPrice");
-    const span = document.getElementsByClassName("close")[0];
+    const span = document.querySelector('.close'); // Selecciona el elemento de cierre
+    const navbar = document.getElementById('navbar'); // Seleccionar el nav
 
     // Cargar los productos desde el archivo JSON
     fetch('productos.json')
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         modalImage.src = product.imagen;
                         modalDescription.textContent = product.descripcion;
                         modalPrice.textContent = "Precio: $" + product.precio;
-                        
+                        navbar.style.display = "none"; // Ocultar el nav
                         modal.style.display = "block";
                     } else {
                         console.error("Product not found for ID:", productId);
@@ -38,11 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     span.onclick = function() {
         modal.style.display = "none";
+        navbar.style.display = "block"; // Mostrar el nav nuevamente
     }
+
 
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
+            navbar.style.display = "block"; // Mostrar el nav nuevamente
         }
     }
 

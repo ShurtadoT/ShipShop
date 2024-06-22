@@ -18,7 +18,7 @@
 
 <body id="home">
     <!-- Barra de navegación -->
-    <nav>
+    <nav id="navbar">
         <div class="nav-content">
 
             <ul>
@@ -113,19 +113,22 @@
     <!-- Modal -->
     <div id="productModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="modalTitle" class="modal-title"></h2>
+            <div class="modal-header">
+                <h2 id="modalTitle" class="modal-title"></h2>
+                <span class="close">&times;</span>
+            </div>
             <div class="modal-body">
                 <img id="modalImage" src="images/" alt="Product Image" class="modal-image">
                 <div class="modal-details">
-                    <p id="modalDescription"style="margin-bottom: 40px;"></p>
-                    <p id="modalPrice" style="margin-bottom: 150px;"></p>
-                    <button class="buy-now">Add to cart</button>
-                </div>    
+                    <p id="modalDescription" style="margin-bottom: 50px;"></p>
+                    <p id="modalPrice" style="margin-bottom: 70px;"></p>
+                    <button class="buy-now">ADD TO CART</button>
+
+                </div>
             </div>
         </div>
     </div>
-      
+
 
 
     <!-- Información de los productos -->
