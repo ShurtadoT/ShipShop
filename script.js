@@ -1,36 +1,44 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     const modal = document.getElementById("productModal");
     const modalTitle = document.getElementById("modalTitle");
     const modalImage = document.getElementById("modalImage");
     const modalDescription = document.getElementById("modalDescription");
     const modalPrice = document.getElementById("modalPrice");
-    const span = document.querySelector('.close'); // Selecciona el elemento de cierre
-    const navbar = document.getElementById('navbar'); // Seleccionar el nav
+    const span = document.querySelector('.close');
+    const navbar = document.getElementById('navbar');
+    const header = document.querySelector('header');
 
-    // Cargar los productos desde el archivo JSON
+    const cartModal = document.getElementById("cartModal");
+    const cartButton = document.querySelector(".cart-container");
+    const cartClose = document.querySelector(".cart-close");
+    const cartItemsContainer = document.getElementById("cartItems");
+    const emptyCartMessage = document.getElementById("emptyCartMessage");
+    const cartSummary = document.getElementById("cartSummary");
+    const totalProducts = document.getElementById("totalProducts");
+    const totalPrice = document.getElementById("totalPrice");
+
+    let cart = [];
+
     fetch('productos.json')
         .then(response => response.json())
         .then(data => {
-            console.log(data); // Verificar que los datos se cargan
             const products = data.productos;
-            
+
             document.querySelectorAll('.buy-now').forEach(function(button) {
                 button.addEventListener('click', function() {
                     const productId = this.getAttribute('data-id');
-                    console.log("Button clicked, product ID:", productId); // Verificar el ID del producto
                     const product = products.find(p => p.id == productId);
-                    
+
                     if (product) {
-                        console.log("Product found:", product); // Verificar que se encontró el producto
                         modalTitle.textContent = product.nombre;
                         modalImage.src = product.imagen;
                         modalDescription.textContent = product.descripcion;
                         modalPrice.textContent = "Precio: $" + product.precio;
-                        navbar.style.display = "none"; // Ocultar el nav
+                        navbar.style.display = "none";
                         modal.style.display = "block";
-                    } else {
-                        console.error("Product not found for ID:", productId);
+
+                        const addToCartButton = document.querySelector('.add-to-cart-btn');
+                        addToCartButton.setAttribute('data-id', productId);
                     }
                 });
             });
@@ -39,18 +47,82 @@ document.addEventListener("DOMContentLoaded", function () {
 
     span.onclick = function() {
         modal.style.display = "none";
-        navbar.style.display = "block"; // Mostrar el nav nuevamente
+        navbar.style.display = "block";
     }
-
 
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
-            navbar.style.display = "block"; // Mostrar el nav nuevamente
+            navbar.style.display = "block";
         }
     }
 
-    // Funcionalidad de búsqueda
+    document.querySelector('.add-to-cart').addEventListener('click', function() {
+        const productId = this.getAttribute('data-id');
+        const productName = modalTitle.textContent;
+        const productPrice = parseFloat(modalPrice.textContent.replace('Precio: $', ''));
+
+        cart.push({ id: productId, name: productName, price: productPrice });
+        updateCartModal();
+        modal.style.display = "none";
+        navbar.style.display = "block";
+    });
+
+    cartButton.addEventListener('click', function() {
+        updateCartModal();
+        cartModal.style.display = "block";
+        navbar.style.display = "none";
+        header.style.display = "none";
+    });
+
+    cartClose.onclick = function() {
+        cartModal.style.display = "none";
+        navbar.style.display = "block";
+        header.style.display = "block";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == cartModal) {
+            cartModal.style.display = "none";
+            navbar.style.display = "block";
+            header.style.display = "block";
+        }
+    }
+
+    function updateCartModal() {
+        cartItemsContainer.innerHTML = "";
+
+        if (cart.length === 0) {
+            emptyCartMessage.style.display = "block";
+            cartSummary.style.display = "none";
+        } else {
+            emptyCartMessage.style.display = "none";
+            cartSummary.style.display = "block";
+
+            let total = 0;
+            cart.forEach(item => {
+                const cartItem = document.createElement("div");
+                cartItem.classList.add("cart-item");
+                cartItem.innerHTML = `
+                    <p>${item.name}</p>
+                    <p>$${item.price.toFixed(2)}</p>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+                total += item.price;
+            });
+
+            totalProducts.textContent = cart.length;
+            totalPrice.textContent = total.toFixed(2);
+        }
+    }
+
+    document.getElementById('continueShopping').addEventListener('click', function() {
+        cartModal.style.display = 'none';
+        navbar.style.display = 'block';
+        header.style.display = 'block';
+        window.location.href = '#productos';  // Cambia esto a la URL de tu página de inicio
+    });
+
     const searchButton = document.querySelector(".search-button");
     const searchInput = document.querySelector("#input");
 

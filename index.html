@@ -47,15 +47,15 @@
                 <div class="underline"></div>
                 <button class="search-button"><i class="fas fa-search"></i></button>
             </div>
-            <div class="cart-container">
-                <a href="#cart"><i class="fas fa-shopping-cart"></i></a>
+            <div class="shopping-cart">
+                <button class="cart-container"><i class="fas fa-shopping-cart"></i></button>
             </div>
         </div>
     </nav>
 
 
     <!-- Encabezado -->
-    <header>
+    <header id="header">
         <h1>ShipShop</h1>
         <h2>“Viaja Más Allá con Nuestros Modelos de Naves Espaciales”</h2>
     </header>
@@ -120,15 +120,40 @@
             <div class="modal-body">
                 <img id="modalImage" src="images/" alt="Product Image" class="modal-image">
                 <div class="modal-details">
-                    <p id="modalDescription" style="margin-bottom: 50px;"></p>
-                    <p id="modalPrice" style="margin-bottom: 70px;"></p>
-                    <button class="buy-now">ADD TO CART</button>
+                    <p id="modalDescription" style="margin-bottom: 45px;"></p>
+                    <p id="modalPrice" style="margin-bottom: 45px;"></p>
+                    <button class="add-to-cart">ADD TO CART</button>
 
                 </div>
             </div>
         </div>
     </div>
 
+
+     
+    <!-- Modal del carrito -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Tu Carrito</h2>
+                <span class="close cart-close">&times;</span>
+            </div>
+            <div class="modal-body">
+            <div id="cartItems" class="modal-details">
+                <!-- Aquí se mostrarán los productos del carrito -->
+            </div>
+            <p id="emptyCartMessage">Tu carrito está vacío. ¡Sigue comprando!</p>
+            </div>
+            <div id="cartSummary" class="modal-details" style="display: none;">
+                <p>Total de productos: <span id="totalProducts">0</span></p>
+                <p>Precio total: $<span id="totalPrice">0.00</span></p>
+                <button id="continueShopping" class="modal-button"><span class="spn2">¡Seguir comprando!</span></button>
+                <button id="checkout" class="modal-button"><span class="spn2">Proceder al pago</span></button>
+            </div>
+        </div>
+    </div>
+
+  
 
 
     <!-- Información de los productos -->

@@ -44,21 +44,22 @@ nav {
   width: 100%;
 }
 
-.cart-container {
-  margin-left: 120px;
-  /* Mueve el carrito a la izquierda */
-}
 
-.cart-container a {
-  color: #ffffff;
-  padding: 10px;
-  display: block;
+.cart-container{
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 120px; /* Mueve el carrito a la izquierda */
   transition: color 0.3s ease, background-color 0.3s ease;
-  text-decoration: none;
+
+
 }
 
-.cart-container a:hover,
-.cart-container a:focus {
+.cart-container:hover,
+.cart-container:focus {
   color: #000000;
   background-color: #ffffff;
   border-radius: 5px;
@@ -356,6 +357,38 @@ div h2 {
   width: 3rem;
 }
 
+.add-to-cart {
+  align-items: center;
+  background-color: transparent;
+  color: #fefdfd;
+  cursor: pointer;
+  display: flex;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+  text-transform: uppercase;
+  outline: 0;
+  border: 0;
+  padding: 1rem;
+}
+
+.add-to-cart:before {
+  background-color: #faf7f7;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  margin-right: 10px;
+  transition: all .42s cubic-bezier(.25, .8, .25, 1);
+  width: 0;
+}
+
+.add-to-cart:hover:before {
+  background-color: #fdfdfd;
+  width: 3rem;
+}
+
 
 /* Estilos del Modal */
 .modal {
@@ -384,23 +417,19 @@ div h2 {
   width: 100%;
   display: flex;
   justify-content: center;
-  /* Centra el contenido horizontalmente */
   align-items: center;
   position: relative;
-  /* Necesario para posicionar la 'x' */
   margin-bottom: 30px;
 }
 
 .modal-title {
   font-size: 40px;
   white-space: nowrap;
-  /* Evita que el título se divida en varias líneas */
 }
 
 .close {
   position: absolute;
   right: 0;
-  /* Alinea la 'x' a la derecha */
   color: #aaa;
   font-size: 28px;
   font-weight: bold;
@@ -415,46 +444,106 @@ div h2 {
 
 .modal-body {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  align-items: flex-start;
 }
 
 .modal-body img {
   width: 40%;
-  /* Ajusta el ancho de la imagen */
   border-radius: 10px;
   margin-right: 20px;
-  /* Añadir un margen derecho para el espaciado */
 }
 
 .modal-details {
-  width: 65%;
-  /* Ajusta el ancho de los detalles */
+  width: 100%;
   padding-left: 10px;
 }
 
 .modal-details p {
   margin: 10px 0;
-  /* Ajusta el margen */
   font-size: 18px;
 }
 
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-
+#emptyCartMessage {
+  font-size: 20px;
+  color: #ccc;
 }
 
-.close:hover,
-.close:focus {
-  color: white;
+#cartSummary {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+#cartSummary p {
+  margin: 5px 0;
+}
+
+.modal-button {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  border: 2px solid #fefefe;
+  text-transform: uppercase;
+  color: #fefefe;
   text-decoration: none;
-  cursor: pointer;
+  font-weight: 600;
+  font-size: 20px;
+  transition: 0.3s;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+}
+
+
+.modal-button::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - -2px);
+  background-color: transparent;
+  transition: 0.3s ease-out;
+  transform: scaleY(1);
+}
+
+.modal-button::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - 50px);
+  background-color: #212121;
+  transition: 0.3s ease-out;
+  transform: scaleY(1);
+}
+
+.modal-button:hover::before {
+  transform: translateY(-25px);
+  height: 0;
+}
+
+.modal-button:hover::after {
+  transform: scaleX(0);
+  transition-delay: 0.15s;
+}
+
+.modal-button:hover {
+  border: 2px solid #fefefe;
+}
+
+.modal-button span {
+  position: relative;
+  z-index: 3;
+}
+
+.modal-button span {
+  position: relative;
+  z-index: 3;
 }
 
 
