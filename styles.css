@@ -15,9 +15,6 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
 
 html {
   scroll-behavior: smooth;
@@ -300,9 +297,12 @@ div h2 {
   box-shadow: 4px 6px 14px #00000036;
   border-radius: 10px;
   color: #F9F9F9;
-  padding: 5px;
+  padding: 10px;
   transition: all .3s;
   margin: 55px;
+  display: flex;
+  flex-direction: column; /* Asegura que el contenido esté en columna */
+  align-items: center; /* Centra el contenido horizontalmente */
 }
 
 .card1:hover {
@@ -316,13 +316,13 @@ div h2 {
   /* Hace el texto en negrita */
   text-align: center;
   /* Centra el texto */
-  margin-bottom: 10px;
+  margin-bottom: 10px ;
   /* Añade margen en la parte inferior para separarlo del resto del contenido de la tarjeta */
 }
 
 .card1 img {
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .buy-now {
@@ -465,6 +465,46 @@ div h2 {
   font-size: 18px;
 }
 
+
+/* Estilo de la superposición de fondo */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Estilo del mensaje emergente */
+.popup-message {
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  padding: 20px 30px; /* Aumentado el padding */
+  border-radius: 10px; /* Aumentado el radio de la esquina para bordes redondeados */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Añadido sombra para más efecto */
+  z-index: 1000;
+  font-size: 20px; /* Aumentado el tamaño de la fuente */
+  font-weight: bold; /* Haciendo el texto en negrita */
+  text-align: center; /* Centrar el texto */
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Añadido transición para el efecto de entrada/salida */
+}
+
+.popup-message.show {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0); /* Mover el mensaje hacia abajo */
+
+}
+
 #emptyCartMessage {
   font-size: 20px;
   color: #ccc;
@@ -481,70 +521,32 @@ div h2 {
   margin: 5px 0;
 }
 
+#modalPrice {
+  font-weight: bold;
+}
+
+
 .modal-button {
-  position: relative;
-  display: inline-block;
-  padding: 15px 30px;
-  border: 2px solid #fefefe;
-  text-transform: uppercase;
-  color: #fefefe;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 20px;
-  transition: 0.3s;
-  text-decoration: none;
-  border: none;
-  background-color: transparent;
+  color: #ffffff; /* Color del texto */
+  padding: 15px 30px; /* Aumentar el tamaño del botón */
+  font-size: 18px; /* Aumentar el tamaño del texto */
+  display: inline-block; /* Cambiar a inline-block para centrar correctamente */
+  background-color: transparent; /* Fondo transparente */
+  text-decoration: none; /* Eliminar subrayado */
+  border: none; /* Eliminar bordes */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Transición para color y fondo */
+  margin: 10px auto; /* Centrarlos con margen automático */
+}
+
+.modal-button:hover,
+.modal-button:focus {
+  color: #000000; /* Color del texto al hacer hover */
+  background-color: #ffffff; /* Fondo blanco al hacer hover */
+  border-radius: 5px; /* Bordes redondeados */
+  text-decoration: none; /* Asegurarse de eliminar el subrayado en hover y focus */
 }
 
 
-.modal-button::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  width: calc(100% + 4px);
-  height: calc(100% - -2px);
-  background-color: transparent;
-  transition: 0.3s ease-out;
-  transform: scaleY(1);
-}
-
-.modal-button::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  width: calc(100% + 4px);
-  height: calc(100% - 50px);
-  background-color: #212121;
-  transition: 0.3s ease-out;
-  transform: scaleY(1);
-}
-
-.modal-button:hover::before {
-  transform: translateY(-25px);
-  height: 0;
-}
-
-.modal-button:hover::after {
-  transform: scaleX(0);
-  transition-delay: 0.15s;
-}
-
-.modal-button:hover {
-  border: 2px solid #fefefe;
-}
-
-.modal-button span {
-  position: relative;
-  z-index: 3;
-}
-
-.modal-button span {
-  position: relative;
-  z-index: 3;
-}
 
 
 

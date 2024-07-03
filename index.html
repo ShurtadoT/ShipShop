@@ -110,7 +110,7 @@
     </div>
 
 
-    <!-- Modal -->
+    <!-- Modal de productos -->
     <div id="productModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -123,7 +123,6 @@
                     <p id="modalDescription" style="margin-bottom: 45px;"></p>
                     <p id="modalPrice" style="margin-bottom: 45px;"></p>
                     <button class="add-to-cart">ADD TO CART</button>
-
                 </div>
             </div>
         </div>
@@ -145,13 +144,16 @@
             <p id="emptyCartMessage">Tu carrito está vacío. ¡Sigue comprando!</p>
             </div>
             <div id="cartSummary" class="modal-details" style="display: none;">
-                <p>Total de productos: <span id="totalProducts">0</span></p>
-                <p>Precio total: $<span id="totalPrice">0.00</span></p>
-                <button id="continueShopping" class="modal-button"><span class="spn2">¡Seguir comprando!</span></button>
-                <button id="checkout" class="modal-button"><span class="spn2">Proceder al pago</span></button>
+                <p><b>Total de productos:</b> <span id="totalProducts"><b>0</b></span></p>
+                <p><b>Precio total: $</b><span id="totalPrice"><b>0.00</b></span></p>
+                <button id="continueShopping" class="modal-button">¡Seguir comprando!</></button>
+                <button id="checkout" class="modal-button">Proceder al pago</button>
             </div>
         </div>
     </div>
+
+    <div id="overlay" class="overlay"></div>
+    <div id="popupMessage" class="popup-message"></div>
 
   
 

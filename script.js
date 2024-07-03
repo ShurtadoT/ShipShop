@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const span = document.querySelector('.close');
     const navbar = document.getElementById('navbar');
     const header = document.querySelector('header');
-
+    const popupMessage = document.getElementById('popupMessage');
+    const overlay = document.getElementById('overlay');
     const cartModal = document.getElementById("cartModal");
     const cartButton = document.querySelector(".cart-container");
     const cartClose = document.querySelector(".cart-close");
@@ -64,8 +65,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         cart.push({ id: productId, name: productName, price: productPrice });
         updateCartModal();
-        modal.style.display = "none";
-        navbar.style.display = "block";
+
+        popupMessage.textContent = `Se ha añadido al carrito: ${productName}`;
+        popupMessage.classList.add('show');
+        overlay.style.display = 'block';
+
+        setTimeout(() => {
+            popupMessage.classList.remove('show');
+            overlay.style.display = 'none';
+            modal.style.display = 'none';
+            navbar.style.display = 'block';
+        }, 2000); // El mensaje desaparecerá después de 2 segundos
     });
 
     cartButton.addEventListener('click', function() {
