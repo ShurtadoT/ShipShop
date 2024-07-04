@@ -22,7 +22,6 @@ html {
 
 
 /* Barra de navegación */
-
 nav {
   position: sticky;
   top: 0;
@@ -43,6 +42,7 @@ nav {
 
 
 .cart-container{
+  position: relative;
   background-color: transparent;
   border: none;
   color: #fff;
@@ -51,8 +51,6 @@ nav {
   padding: 5px;
   margin-left: 120px; /* Mueve el carrito a la izquierda */
   transition: color 0.3s ease, background-color 0.3s ease;
-
-
 }
 
 .cart-container:hover,
@@ -60,6 +58,68 @@ nav {
   color: #000000;
   background-color: #ffffff;
   border-radius: 5px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#emptyCartMessage {
+  font-size: 20px;
+  color: #ccc;
+}
+
+#cartSummary {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+#cartSummary p {
+  margin: 5px 0;
+}
+
+#modalPrice {
+  font-weight: bold;
+}
+
+.cart-item {
+  border-bottom: 1px solid #ddd; /* Añadir una línea de separación */
+  padding: 10px 0; /* Añadir espacio alrededor de cada elemento */
+  display: flex;
+  justify-content: space-between; /* Espaciar los elementos dentro del cart-item */
+  align-items: center; /* Alinear los elementos verticalmente */
+  
+}
+
+.cart-item p {
+  margin: 0; /* Eliminar el margen por defecto de los párrafos */
+}
+
+.cart-item:last-child {
+  border-bottom: none; /* Eliminar la línea de separación del último elemento */
+}
+
+.cart-item .item-name {
+  flex: 3; /* Hacer que el nombre del producto ocupe más espacio */
+  font-weight: bold; /* Haciendo el texto en negrita */
+}
+
+.cart-item .item-price {
+  flex: 1; /* Hacer que el precio ocupe menos espacio */
+  text-align: right; /* Alinear el precio a la derecha */
 }
 
 nav ul {
@@ -357,7 +417,7 @@ div h2 {
   width: 3rem;
 }
 
-.add-to-cart {
+.add-to-cart-btn {
   align-items: center;
   background-color: transparent;
   color: #fefdfd;
@@ -374,7 +434,7 @@ div h2 {
   padding: 1rem;
 }
 
-.add-to-cart:before {
+.add-to-cart-btn:before {
   background-color: #faf7f7;
   content: "";
   display: inline-block;
@@ -384,7 +444,7 @@ div h2 {
   width: 0;
 }
 
-.add-to-cart:hover:before {
+.add-to-cart-btn:hover:before {
   background-color: #fdfdfd;
   width: 3rem;
 }
@@ -505,24 +565,29 @@ div h2 {
 
 }
 
-#emptyCartMessage {
-  font-size: 20px;
-  color: #ccc;
+
+
+
+
+
+/* Estilo para el botón de remover producto */
+.remove-item {
+  background-color: transparent; /* Color de fondo rojo */
+  color: rgb(251, 251, 251); /* Color del texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 15px; /* Relleno */
+  cursor: pointer; /* Cambiar el cursor a pointer */
+  font-size: 16px; /* Tamaño de fuente */
+  margin-left: 280px; /* Añadir espacio a la izquierda del botón de remover */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
 }
 
-#cartSummary {
-  border-top: 1px solid #ddd;
-  padding-top: 10px;
-  width: 100%;
-  text-align: center;
-}
-
-#cartSummary p {
-  margin: 5px 0;
-}
-
-#modalPrice {
-  font-weight: bold;
+.remove-item:hover,
+.remove-item:focus {
+  background-color: #ff0000; /* Cambiar el color de fondo al pasar el mouse */
+  transform: scale(1.05); /* Ampliar ligeramente el botón */
+  outline: none; /* Eliminar el contorno en el enfoque */
 }
 
 
@@ -536,6 +601,7 @@ div h2 {
   border: none; /* Eliminar bordes */
   transition: color 0.3s ease, background-color 0.3s ease; /* Transición para color y fondo */
   margin: 10px auto; /* Centrarlos con margen automático */
+  cursor: pointer; /* Cambiar el cursor a pointer */
 }
 
 .modal-button:hover,

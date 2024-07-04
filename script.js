@@ -35,8 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         modalImage.src = product.imagen;
                         modalDescription.textContent = product.descripcion;
                         modalPrice.textContent = "Precio: $" + product.precio;
-                        navbar.style.display = "none";
-                        modal.style.display = "block";
+                        toggleModal(modal, true);
 
                         const addToCartButton = document.querySelector('.add-to-cart-btn');
                         addToCartButton.setAttribute('data-id', productId);
@@ -46,25 +45,30 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => console.error('Error loading products:', error));
 
+    function toggleModal(modal, show) {
+        modal.style.display = show ? "block" : "none";
+        navbar.style.display = show ? "none" : "block";
+        header.style.display = show ? "none" : "block";
+    }
+
     span.onclick = function() {
-        modal.style.display = "none";
-        navbar.style.display = "block";
+        toggleModal(modal, false);
     }
 
     window.onclick = function(event) {
         if (event.target == modal) {
-            modal.style.display = "none";
-            navbar.style.display = "block";
+            toggleModal(modal, false);
         }
     }
 
-    document.querySelector('.add-to-cart').addEventListener('click', function() {
+    document.querySelector('.add-to-cart-btn').addEventListener('click', function() {
         const productId = this.getAttribute('data-id');
         const productName = modalTitle.textContent;
         const productPrice = parseFloat(modalPrice.textContent.replace('Precio: $', ''));
 
         cart.push({ id: productId, name: productName, price: productPrice });
         updateCartModal();
+        updateCartCount();
 
         popupMessage.textContent = `Se ha añadido al carrito: ${productName}`;
         popupMessage.classList.add('show');
@@ -73,30 +77,47 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
             popupMessage.classList.remove('show');
             overlay.style.display = 'none';
-            modal.style.display = 'none';
-            navbar.style.display = 'block';
-        }, 2000); // El mensaje desaparecerá después de 2 segundos
+            toggleModal(modal, false);
+        }, 2000);
     });
 
     cartButton.addEventListener('click', function() {
         updateCartModal();
-        cartModal.style.display = "block";
-        navbar.style.display = "none";
-        header.style.display = "none";
+        toggleModal(cartModal, true);
     });
 
     cartClose.onclick = function() {
-        cartModal.style.display = "none";
-        navbar.style.display = "block";
-        header.style.display = "block";
+        toggleModal(cartModal, false);
     }
 
     window.onclick = function(event) {
         if (event.target == cartModal) {
-            cartModal.style.display = "none";
-            navbar.style.display = "block";
-            header.style.display = "block";
+            toggleModal(cartModal, false);
         }
+    }
+
+    function createCartItem(item) {
+        const cartItem = document.createElement("div");
+        cartItem.classList.add("cart-item");
+        cartItem.innerHTML = `
+            <p class="item-name">${item.name}</p>
+            <p class="item-price">$${item.price.toFixed(2)}</p>
+            <button class="remove-item" data-id="${item.id}">Remove</button>
+        `;
+        cartItem.querySelector('.remove-item').addEventListener('click', function() {
+            removeCartItem(item.id);
+        });
+        return cartItem;
+    }
+
+    function removeCartItem(itemId) {
+        console.log(`Before removal: ${JSON.stringify(cart)}`);  // Mensaje de depuración
+        // Filtra el carrito para eliminar solo el elemento seleccionado
+        cart = cart.filter(item => item.id !== itemId);
+        console.log(`After removal: ${JSON.stringify(cart)}`);  // Mensaje de depuración
+        // Actualiza el modal del carrito
+        updateCartModal();
+        updateCartCount();  
     }
 
     function updateCartModal() {
@@ -111,12 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let total = 0;
             cart.forEach(item => {
-                const cartItem = document.createElement("div");
-                cartItem.classList.add("cart-item");
-                cartItem.innerHTML = `
-                    <p>${item.name}</p>
-                    <p>$${item.price.toFixed(2)}</p>
-                `;
+                const cartItem = createCartItem(item);
                 cartItemsContainer.appendChild(cartItem);
                 total += item.price;
             });
@@ -126,11 +142,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function updateCartCount() {
+        const cartCountElement = document.querySelector('.cart-count');
+        cartCountElement.textContent = cart.length;
+    }
+    
+
     document.getElementById('continueShopping').addEventListener('click', function() {
-        cartModal.style.display = 'none';
-        navbar.style.display = 'block';
-        header.style.display = 'block';
-        window.location.href = '#productos';  // Cambia esto a la URL de tu página de inicio
+        toggleModal(cartModal, false);
+        window.location.href = '#productos';
     });
 
     const searchButton = document.querySelector(".search-button");
@@ -141,6 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const links = document.querySelectorAll("nav ul a");
         let found = false;
 
+        searchButton.disabled = true;
         links.forEach(link => {
             if (link.textContent.toLowerCase().includes(query)) {
                 window.location.href = link.getAttribute("href");
@@ -151,6 +172,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!found) {
             alert("No se encontraron resultados para su búsqueda.");
         }
+
+        searchButton.disabled = false;
     };
 
     searchButton.addEventListener("click", performSearch);
@@ -158,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
     searchInput.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
             e.preventDefault();
-            performSearch();
+            performSearch();    
         }
     });
 });
