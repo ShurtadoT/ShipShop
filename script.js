@@ -17,6 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const cartSummary = document.getElementById("cartSummary");
     const totalProducts = document.getElementById("totalProducts");
     const totalPrice = document.getElementById("totalPrice");
+    const checkoutButton = document.getElementById('checkout');
+    const checkoutModal = document.getElementById('checkoutModal');
+    const checkoutClose = document.querySelector('.checkout-close');
 
     let cart = [];
 
@@ -25,8 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             const products = data.productos;
 
-            document.querySelectorAll('.buy-now').forEach(function(button) {
-                button.addEventListener('click', function() {
+            document.querySelectorAll('.buy-now').forEach(function (button) {
+                button.addEventListener('click', function () {
                     const productId = this.getAttribute('data-id');
                     const product = products.find(p => p.id == productId);
 
@@ -46,22 +49,36 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(error => console.error('Error loading products:', error));
 
     function toggleModal(modal, show) {
-        modal.style.display = show ? "block" : "none";
+        if (show) {
+            modal.classList.add('show');
+            modal.style.display = "block";
+            setTimeout(() => {
+                modal.style.opacity = "1";
+                modal.style.visibility = "visible";
+            }, 10); // Pequeño retraso para permitir que el CSS se aplique
+        } else {
+            modal.style.opacity = "0";
+            modal.style.visibility = "hidden";
+            setTimeout(() => {
+                modal.classList.remove('show');
+                modal.style.display = "none";
+            }, 500); // Asegúrate de que este tiempo coincida con el tiempo de transición en CSS
+        }
         navbar.style.display = show ? "none" : "block";
         header.style.display = show ? "none" : "block";
     }
 
-    span.onclick = function() {
+    span.onclick = function () {
         toggleModal(modal, false);
     }
 
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modal) {
             toggleModal(modal, false);
         }
     }
 
-    document.querySelector('.add-to-cart-btn').addEventListener('click', function() {
+    document.querySelector('.add-to-cart-btn').addEventListener('click', function () {
         const productId = this.getAttribute('data-id');
         const productName = modalTitle.textContent;
         const productPrice = parseFloat(modalPrice.textContent.replace('Precio: $', ''));
@@ -78,19 +95,19 @@ document.addEventListener("DOMContentLoaded", function () {
             popupMessage.classList.remove('show');
             overlay.style.display = 'none';
             toggleModal(modal, false);
-        }, 2000);
+        }, 1500);
     });
 
-    cartButton.addEventListener('click', function() {
+    cartButton.addEventListener('click', function () {
         updateCartModal();
         toggleModal(cartModal, true);
     });
 
-    cartClose.onclick = function() {
+    cartClose.onclick = function () {
         toggleModal(cartModal, false);
     }
 
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == cartModal) {
             toggleModal(cartModal, false);
         }
@@ -104,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <p class="item-price">$${item.price.toFixed(2)}</p>
             <button class="remove-item" data-id="${item.id}">Remove</button>
         `;
-        cartItem.querySelector('.remove-item').addEventListener('click', function() {
+        cartItem.querySelector('.remove-item').addEventListener('click', function () {
             removeCartItem(item.id);
         });
         return cartItem;
@@ -117,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(`After removal: ${JSON.stringify(cart)}`);  // Mensaje de depuración
         // Actualiza el modal del carrito
         updateCartModal();
-        updateCartCount();  
+        updateCartCount();
     }
 
     function updateCartModal() {
@@ -146,12 +163,84 @@ document.addEventListener("DOMContentLoaded", function () {
         const cartCountElement = document.querySelector('.cart-count');
         cartCountElement.textContent = cart.length;
     }
-    
 
-    document.getElementById('continueShopping').addEventListener('click', function() {
+    document.getElementById('continueShopping').addEventListener('click', function () {
         toggleModal(cartModal, false);
         window.location.href = '#productos';
     });
+
+    checkoutButton.addEventListener('click', function () {
+        toggleModal(cartModal, false);
+        setTimeout(() => {
+            toggleModal(checkoutModal, true);
+        }, 500); // Asegúrate de que este tiempo coincida con el tiempo de transición en CSS
+    });
+
+    checkoutClose.onclick = function () {
+        toggleModal(checkoutModal, false);
+    }
+
+    window.onclick = function (event) {
+        if (event.target == checkoutModal) {
+            toggleModal(checkoutModal, false);
+        }
+    }
+
+
+    
+    function updateOrderSummary() {
+        const orderSummary = document.getElementById("orderSummary");
+        orderSummary.innerHTML = "";
+    
+        if (cart.length === 0) {
+            orderSummary.innerHTML = "<p>El carrito está vacío.</p>";
+        } else {
+            let total = 0;
+            cart.forEach(item => {
+                const productDiv = document.createElement("div");
+                productDiv.classList.add("order-item");
+                productDiv.innerHTML = `
+                    <p class="order-item-name">${item.name}</p>
+                    <p class="order-item-price">$${item.price.toFixed(2)}</p>
+                `;
+                orderSummary.appendChild(productDiv);
+                total += item.price;
+            });
+    
+            const totalDiv = document.createElement("div");
+            totalDiv.classList.add("order-total");
+            totalDiv.innerHTML = `
+                <p>Total:</p>
+                <p>$${total.toFixed(2)}</p>
+            `;
+            orderSummary.appendChild(totalDiv);
+        }
+    }
+
+    checkoutButton.addEventListener('click', function () {
+        toggleModal(cartModal, false);
+        setTimeout(() => {
+            updateOrderSummary();
+            toggleModal(checkoutModal, true);
+        }, 500); // Asegúrate de que este tiempo coincida con el tiempo de transición en CSS
+    });
+
+    checkoutClose.onclick = function () {
+        toggleModal(checkoutModal, false);
+    }
+    
+    document.getElementById('cancelPayment').addEventListener('click', function () {
+        toggleModal(checkoutModal, false);
+    });
+    
+    window.onclick = function (event) {
+        if (event.target == checkoutModal) {
+            toggleModal(checkoutModal, false);
+        }
+    }
+    
+    
+    
 
     const searchButton = document.querySelector(".search-button");
     const searchInput = document.querySelector("#input");
@@ -181,7 +270,7 @@ document.addEventListener("DOMContentLoaded", function () {
     searchInput.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
             e.preventDefault();
-            performSearch();    
+            performSearch();
         }
     });
 });
