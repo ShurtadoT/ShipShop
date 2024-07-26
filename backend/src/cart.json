@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "nombre": "Falcon Heavy",
+    "descripcion": "Vehículo de lanzamiento espacial superpesado reutilizable, diseñado y fabricado por SpaceX.",
+    "imagen": "images/FalconHeavy1.jpg",
+    "precio": 20
+  },
+  {
+    "id": "2",
+    "nombre": "Falcon 9",
+    "descripcion": "Vehículo de lanzamiento parcialmente reutilizable de dos etapas diseñado y fabricado por SpaceX.",
+    "imagen": "images/Falcon9.jpg",
+    "precio": 25
+  },
+  {
+    "id": "3",
+    "nombre": "Starship",
+    "descripcion": "Sistema de lanzamiento y nave espacial totalmente reutilizable desarrollado por SpaceX como proyecto de vuelo espacial privado.",
+    "imagen": "images/Starship.jpg",
+    "precio": 30
+  },
+  {
+    "id": "1",
+    "nombre": "Falcon Heavy",
+    "descripcion": "Vehículo de lanzamiento espacial superpesado reutilizable, diseñado y fabricado por SpaceX.",
+    "imagen": "images/FalconHeavy1.jpg",
+    "precio": 20
+  },
+  {
+    "id": "2",
+    "nombre": "Falcon 9",
+    "descripcion": "Vehículo de lanzamiento parcialmente reutilizable de dos etapas diseñado y fabricado por SpaceX.",
+    "imagen": "images/Falcon9.jpg",
+    "precio": 25
+  }
+]

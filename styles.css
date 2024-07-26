@@ -561,7 +561,7 @@ div h2 {
   color: white;
   padding: 20px;
   border-radius: 10px;
-  max-width: 80%;
+  max-width: 70%;
   margin: 50px auto;
   display: flex;
   flex-direction: column;
@@ -681,6 +681,23 @@ div h2 {
   color: white;
   text-decoration: none;
 }
+
+.checkout-back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.checkout-back:hover {
+  color: #ccc;
+}
+
 
 
 
